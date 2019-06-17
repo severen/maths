@@ -1,0 +1,79 @@
+\documentclass[parskip]{scrartcl}
+
+% Style
+\usepackage{xcolor}
+\usepackage{hyperref}
+\hypersetup{
+  colorlinks=true,
+  urlcolor=blue
+}
+
+% Maths
+\usepackage{mathtools}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\newtheorem{thm}{Theorem}
+\usepackage{commath}
+\usepackage{unicode-math}
+
+% Language
+\usepackage{csquotes}
+\usepackage{polyglossia}
+\setdefaultlanguage{english}
+\setkeys{english}{variant=newzealand, ordinalmonthday=true}
+
+\title{The Quadratic Formula}
+\author{Severen Redwood}
+
+\begin{document}
+
+\maketitle
+
+\begin{abstract}
+This paper will state and prove the quadratic formula.
+\end{abstract}
+
+\section{Introduction}
+
+The quadratic formula is one of the most used and well-known formulae in
+mathematics. Although the formula may seem rather obtuse and mystical to the
+uninitiated, in reality it can be derived in a simple fashion via a
+generalisation of the method of completing the square.
+
+\section{The Quadratic Formula}
+
+\begin{thm}
+The solutions of a quadratic equation of the form \(ax^2 + bx + c = 0\) can be
+found with the formula
+
+\[ x = \frac{-b ±\sqrt{b^2 - 4ac}}{2a}, \]
+
+where \(a ≠ 0\).
+\end{thm}
+
+\pagebreak
+
+\begin{proof}
+Starting with \(ax^2 + bx + c = 0\), complete the square:
+
+\begin{align*}
+    ax^2 + bx + c &= 0 \\
+    ax^2 + bx &= -c \\
+    x^2 + \frac{b}{a}x &= -\frac{c}{a} \\
+    x^2 + \frac{b}{a}x + \frac{b^2}{4a^2} &= \frac{b^2}{4a^2} - \frac{c}{a} \\
+    (x + \frac{b}{2a})^2 &= \frac{b^2}{4a^2} - \frac{c}{a}
+\end{align*}
+
+Then solve for \(x\):
+
+\begin{align*}
+    (x + \frac{b}{2a})^2 &= \frac{b^2}{2a^2} - \frac{c}{a} \\
+    (x + \frac{b}{2a})^2 &= \frac{b^2}{4a^2} - \frac{4ac}{4a^2} \\
+    (x + \frac{b}{2a})^2 &= \frac{b^2 - 4ac}{4a^2} \\
+    x + \frac{b}{2a} &= ±\frac{\sqrt{b^2 - 4ac}}{2a} \\
+    x &= -\frac{b}{2a} ±\frac{\sqrt{b^2 - 4ac}}{2a} \\
+    x &= \frac{-b ± \sqrt{b^2 - 4ac}}{2a} \qedhere
+\end{align*}
+\end{proof}
+
+\end{document}
