@@ -1,5 +1,8 @@
 \documentclass[parskip]{scrartcl}
 
+% Generate ActualText annotations for better copy/paste in some PDF readers.
+\XeTeXgenerateactualtext=1
+
 % Style
 \usepackage{xcolor}
 \usepackage{hyperref}
@@ -12,15 +15,14 @@
 \usepackage{mathtools}
 \usepackage{amssymb}
 \usepackage{amsthm}
-\newtheorem{thm}{Theorem}
+\newtheorem{theorem}{Theorem}
 \usepackage{commath}
 \usepackage{unicode-math}
 
 % Language
 \usepackage{csquotes}
 \usepackage{polyglossia}
-\setdefaultlanguage{english}
-\setkeys{english}{variant=newzealand, ordinalmonthday=true}
+\setdefaultlanguage[variant=newzealand, ordinalmonthday]{english}
 
 \title{The Quadratic Formula}
 \author{Severen Redwood}
@@ -42,14 +44,14 @@ generalisation of the method of completing the square.
 
 \section{The Quadratic Formula}
 
-\begin{thm}
+\begin{theorem}
 The solutions of a quadratic equation of the form \(ax^2 + bx + c = 0\) can be
 found with the formula
 
 \[ x = \frac{-b ±\sqrt{b^2 - 4ac}}{2a}, \]
 
 where \(a ≠ 0\).
-\end{thm}
+\end{theorem}
 
 \pagebreak
 
