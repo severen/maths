@@ -1,0 +1,103 @@
+\documentclass[parskip]{scrartcl}
+
+\input{../preamble.tex}
+
+\usepackage{amsthm}
+\newtheorem{theorem}{Theorem}
+
+\title{Proofs}
+\author{Severen Redwood}
+
+\begin{document}
+
+\maketitle
+
+\section{About This Document}
+
+This document contains various assorted proofs that I have written down in order
+to assist my understanding. Nothing in here is novel or new, these are all
+simply retellings of that which has already been proven.
+
+\section{The Quadratic Formula}
+
+\begin{theorem}
+The solutions of a quadratic equation of the form \(ax^2 + bx + c = 0\) can be
+found with the formula
+
+\[ x = \frac{-b ±\sqrt{b^2 - 4ac}}{2a}, \]
+
+where \(a ≠ 0\).
+\end{theorem}
+
+\begin{proof}
+Completing the square on the general quadratic equation \(ax^2 + bx + c = 0\) gives
+
+\begin{align*}
+    ax^2 + bx + c &= 0 \\
+    ax^2 + bx &= -c \\
+    x^2 + \frac{b}{a}x &= -\frac{c}{a} \\
+    x^2 + \frac{b}{a}x + \frac{b^2}{4a^2} &= \frac{b^2}{4a^2} - \frac{c}{a} \\
+    {(x + \frac{b}{2a})}^2 &= \frac{b^2}{4a^2} - \frac{c}{a}.
+\end{align*}
+
+This allows for isolating \(x\), giving
+
+\begin{align*}
+    {(x + \frac{b}{2a})}^2 &= \frac{b^2}{2a^2} - \frac{c}{a} \\
+    {(x + \frac{b}{2a})}^2 &= \frac{b^2}{4a^2} - \frac{4ac}{4a^2} \\
+    {(x + \frac{b}{2a})}^2 &= \frac{b^2 - 4ac}{4a^2} \\
+    x + \frac{b}{2a} &= ±\frac{\sqrt{b^2 - 4ac}}{2a} \\
+    x &= -\frac{b}{2a} ±\frac{\sqrt{b^2 - 4ac}}{2a} \\
+    x &= \frac{-b ± \sqrt{b^2 - 4ac}}{2a},
+\end{align*}
+
+which is the quadratic formula.
+\end{proof}
+
+\section{Irrationality of \(\sqrt{2}\)}
+
+\begin{theorem}
+The square root of two, \(\sqrt{2}\), can not be represented as a ratio of two
+integers, and therefore is irrational.
+\end{theorem}
+
+\begin{proof}
+Suppose that \(\sqrt{2}\) is rational and thus can be written as the ratio of
+two integers \(\frac{a}{b}\), where \(a\) is prime to \(b\) (\(a ⟂
+b\)). Therefore, we can state that
+
+\begin{align*}
+  \sqrt{2} &= \frac{a}{b} \\
+  2 &= \frac{a^2}{b^2}.
+\end{align*}
+
+Rearranging for \(a^2\) gives the equation
+
+\begin{equation*}
+  a^2 = 2b^2,
+\end{equation*}
+
+which shows that \(a^2\) is even, since \(2b^2\) is necessarily even because it
+is a multiple of 2.
+
+It follows that \(a\) must also be even, as squares of odd integers are never
+even. Therefore, there exists some integer \(k\) that satisfies the equation \(a
+= 2k\).
+
+Substituting \(2k\) for \(a\) leads to
+
+\begin{align*}
+  {(2k)}^2 &= 2b^2 \\
+  4k^2 &= 2b^2 \\
+  2k^2 &= b^2,
+\end{align*}
+
+which demonstrates that \(b^2\) and therefore \(b\) itself must be even, using
+the same reasoning as with \(a^2\).
+
+Because \(a\) and \(b\) are both even, the assumption that \(\sqrt{2}\) is
+rational and \(a\) is prime to \(b\) no longer holds as they share a common
+factor of 2.
+\end{proof}
+
+\end{document}
