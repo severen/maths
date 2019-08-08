@@ -21,35 +21,35 @@ simply retellings of that which has already been proven.
 \section{The Quadratic Formula}
 
 \begin{theorem}
-  The solutions of a quadratic equation of the form \(ax^2 + bx + c = 0\) can be
-  found with the formula
+  The solutions of a quadratic equation of the form \(ax^{2} + bx + c = 0\) can
+  be found with the formula
 
-  \[ x = \frac{-b ±\sqrt{b^2 - 4ac}}{2a}, \]
+  \[ x = \frac{-b ±\sqrt{b^{2} - 4ac}}{2a}, \]
 
   where \(a ≠ 0\).
 \end{theorem}
 
 \begin{proof}
-  Completing the square on the general quadratic equation \(ax^2 + bx + c = 0\)
-  gives
+  Completing the square on the general quadratic equation \(ax^{2} + bx + c =
+  0\) gives
 
   \begin{align*}
-    ax^2 + bx + c &= 0 \\
-    ax^2 + bx &= -c \\
-    x^2 + \frac{b}{a}x &= -\frac{c}{a} \\
-    x^2 + \frac{b}{a}x + \frac{b^2}{4a^2} &= \frac{b^2}{4a^2} - \frac{c}{a} \\
-    {(x + \frac{b}{2a})}^2 &= \frac{b^2}{4a^2} - \frac{c}{a}.
+    ax^{2} + bx + c &= 0 \\
+    ax^{2} + bx &= -c \\
+    x^{2} + \frac{b}{a}x &= -\frac{c}{a} \\
+    x^{2} + \frac{b}{a}x + \frac{b^{2}}{4a^{2}} &= \frac{b^{2}}{4a^{2}} - \frac{c}{a} \\
+    {(x + \frac{b}{2a})}^{2} &= \frac{b^{2}}{4a^{2}} - \frac{c}{a}.
   \end{align*}
 
   This allows for isolating \(x\), giving
 
   \begin{align*}
-    {(x + \frac{b}{2a})}^2 &= \frac{b^2}{2a^2} - \frac{c}{a} \\
-    {(x + \frac{b}{2a})}^2 &= \frac{b^2}{4a^2} - \frac{4ac}{4a^2} \\
-    {(x + \frac{b}{2a})}^2 &= \frac{b^2 - 4ac}{4a^2} \\
-    x + \frac{b}{2a} &= ±\frac{\sqrt{b^2 - 4ac}}{2a} \\
-    x &= -\frac{b}{2a} ±\frac{\sqrt{b^2 - 4ac}}{2a} \\
-    x &= \frac{-b ± \sqrt{b^2 - 4ac}}{2a},
+    {(x + \frac{b}{2a})}^{2} &= \frac{b^{2}}{2a^{2}} - \frac{c}{a} \\
+    {(x + \frac{b}{2a})}^{2} &= \frac{b^{2}}{4a^{2}} - \frac{4ac}{4a^{2}} \\
+    {(x + \frac{b}{2a})}^{2} &= \frac{b^{2} - 4ac}{4a^{2}} \\
+    x + \frac{b}{2a} &= ±\frac{\sqrt{b^{2} - 4ac}}{2a} \\
+    x &= -\frac{b}{2a} ±\frac{\sqrt{b^{2} - 4ac}}{2a} \\
+    x &= \frac{-b ± \sqrt{b^{2} - 4ac}}{2a},
   \end{align*}
 
   which is the quadratic formula.
@@ -69,17 +69,17 @@ simply retellings of that which has already been proven.
 
   \begin{align*}
     \sqrt{2} &= \frac{a}{b} \\
-    2 &= \frac{a^2}{b^2}.
+    2 &= \frac{a^{2}}{b^{2}}.
   \end{align*}
 
-  Rearranging for \(a^2\) gives the equation
+  Rearranging for \(a^{2}\) gives the equation
 
   \begin{equation*}
-    a^2 = 2b^2,
+    a^{2} = 2b^{2},
   \end{equation*}
 
-  which shows that \(a^2\) is even, since \(2b^2\) is necessarily even because
-  it is a multiple of 2.
+  which shows that \(a^{2}\) is even, since \(2b^{2}\) is necessarily even
+  because it is a multiple of 2.
 
   It follows that \(a\) must also be even, as squares of odd integers are never
   even. Therefore, there exists some integer \(k\) that satisfies the equation
@@ -88,13 +88,13 @@ simply retellings of that which has already been proven.
   Substituting \(2k\) for \(a\) leads to
 
   \begin{align*}
-    {(2k)}^2 &= 2b^2 \\
-    4k^2 &= 2b^2 \\
-    2k^2 &= b^2,
+    {(2k)}^{2} &= 2b^{2} \\
+    4k^{2} &= 2b^{2} \\
+    2k^{2} &= b^{2},
   \end{align*}
 
-  which demonstrates that \(b^2\) and therefore \(b\) itself must be even, using
-  the same reasoning as with \(a^2\).
+  which demonstrates that \(b^{2}\) and therefore \(b\) itself must be even,
+  using the same reasoning as with \(a^{2}\).
 
   Since \(a\) and \(b\) are both even, the assumption that \(\sqrt{2}\) is
   rational and \(a\) is prime to \(b\) no longer holds, as they share a common
@@ -106,29 +106,29 @@ simply retellings of that which has already been proven.
 \subsection{The Product Law}
 
 \begin{theorem}
-  A logarithm of the form \(\log_b(xy)\) can be expressed as \(\log_b(x) +
-  \log_b(y)\).
+  A logarithm of the form \(\log_{b}(xy)\) can be expressed as \(\log_{b}(x) +
+  \log_{b}(y)\).
 \end{theorem}
 
 \begin{proof}
-  Let \(x = b^m\) and \(y = b^n\). From the definition of a logarithm, it
-  follows that \(\log_b(x) = m\) and \(\log_b(y) = n\).
+  Let \(x = b^{m}\) and \(y = b^{n}\). From the definition of a logarithm, it
+  follows that \(\log_{b}(x) = m\) and \(\log_{b}(y) = n\).
 
-  Substituting \(b^m\) and \(b^n\) for \(x\) and \(y\) in the expression
-  \(\log_b(xy)\) gives the equation
+  Substituting \(b^{m}\) and \(b^{n}\) for \(x\) and \(y\) in the expression
+  \(\log_{b}(xy)\) gives the equation
 
   \begin{equation*}
     \begin{split}
-      \log_b(xy) &= \log_b(b^m · b^n) \\
-      &= \log_b(b^{m + n}) \\
+      \log_{b}(xy) &= \log_{b}(b^{m} · b^{n}) \\
+      &= \log_{b}(b^{m + n}) \\
       &= m + n.
     \end{split}
   \end{equation*}
 
-  Since \(m = \log_b(x)\) and \(n = \log_b(y)\), the above can be written as
+  Since \(m = \log_{b}(x)\) and \(n = \log_{b}(y)\), the above can be written as
 
   \begin{equation*}
-    \log_b(xy) = \log_b(x) + \log_b(y)
+    \log_{b}(xy) = \log_{b}(x) + \log_{b}(y)
   \end{equation*}
 
   with the use of substitution.
@@ -137,29 +137,29 @@ simply retellings of that which has already been proven.
 \subsection{The Quotient Law}
 
 \begin{theorem}
-  A logarithm of the form \(\log_b(\frac{x}{y})\) can be expressed as
-  \(\log_b(x) - \log_b(y)\).
+  A logarithm of the form \(\log_{b}(\frac{x}{y})\) can be expressed as
+  \(\log_{b}(x) - \log_{b}(y)\).
 \end{theorem}
 
 \begin{proof}
-  Let \(x = b^m\) and \(y = b^n\). From the definition of a logarithm, it
-  follows that \(\log_b(x) = m\) and \(\log_b(y) = n\).
+  Let \(x = b^{m}\) and \(y = b^{n}\). From the definition of a logarithm, it
+  follows that \(\log_{b}(x) = m\) and \(\log_{b}(y) = n\).
 
-  Substituting \(b^m\) and \(b^n\) for \(x\) and \(y\) in the expression
-  \(\log_b(\frac{x}{y})\) gives the equation
+  Substituting \(b^{m}\) and \(b^{n}\) for \(x\) and \(y\) in the expression
+  \(\log_{b}(\frac{x}{y})\) gives the equation
 
   \begin{equation*}
     \begin{split}
-      \log_b\big(\frac{x}{y}\big) &= \log_b\big(\frac{b^m}{b^n}\big) \\
-      &= \log_b(b^{m - n}) \\
+      \log_{b}\big(\frac{x}{y}\big) &= \log_{b}\big(\frac{b^{m}}{b^{n}}\big) \\
+      &= \log_{b}(b^{m - n}) \\
       &= m - n.
     \end{split}
   \end{equation*}
 
-  Since \(m = \log_b(x)\) and \(n = \log_b(y)\), the above can be written as
+  Since \(m = \log_{b}(x)\) and \(n = \log_{b}(y)\), the above can be written as
 
   \begin{equation*}
-    \log_b\big(\frac{x}{y}\big) = \log_b(x) - \log_b(y)
+    \log_{b}\big(\frac{x}{y}\big) = \log_{b}(x) - \log_{b}(y)
   \end{equation*}
 
   with the use of substitution.
@@ -168,31 +168,31 @@ simply retellings of that which has already been proven.
 \subsection{The Power Law}
 
 \begin{theorem}
-  A logarithm of the form \(\log_b(x^y)\) can be expressed as \(y ·
-  \log_b(x)\).
+  A logarithm of the form \(\log_{b}(x^{y})\) can be expressed as \(y ·
+  \log_{b}(x)\).
 \end{theorem}
 
 \begin{proof}
-  Let \(x = b^{c}\). From the definition of a logarithm, it follows that
-  \(\log_b(x) = c\).
+  Let \(x = b^{n}\). From the definition of a logarithm, it follows that
+  \(\log_{b}(x) = n\).
 
-  Substituting \(b^c\) for \(x\) in the expression \(\log_b(x^y)\) gives the
-  equation
+  Substituting \(b^{n}\) for \(x\) in the expression \(\log_{b}(x^{y})\) gives
+  the equation
 
   \begin{equation*}
     \begin{split}
-      \log_b(x^y) &= \log_b({(b^c)}^y) \\
-      &= \log_b(b^{cy}) \\
-      &= cy
+      \log_{b}(x^{y}) &= \log_{b}({(b^{n})}^{y}) \\
+      &= \log_{b}(b^{ny}) \\
+      &= ny
     \end{split}
   \end{equation*}
 
-  Since \(x = \log_b\), the above can be written as
+  Since \(n = \log_{b}(x)\), the above can be written as
 
   \begin{equation*}
     \begin{split}
-      \log_b(x^y) &= \log_b(x) · y \\
-      &= y · \log_b(x)
+      \log_{b}(x^{y}) &= \log_{b}(x) · y \\
+      &= y · \log_{b}(x)
     \end{split}
   \end{equation*}
 
@@ -202,35 +202,36 @@ simply retellings of that which has already been proven.
 \subsection{The Change of Base Formula}
 
 \begin{theorem}
-  Any logarithm \(\log_b(a)\) can be re-expressed in terms of another base with the formula
+  Any logarithm \(\log_{b}(a)\) can be re-expressed in terms of another base
+  with the formula
 
-  \[ \log_b(a) = \frac{\log_x(a)}{\log_x(b)}. \]
+  \[ \log_{b}(a) = \frac{\log_{x}(a)}{\log_{x}(b)}. \]
 \end{theorem}
 
 \begin{proof}
 
-  Let \(c = \log_b(a)\). From the definition of a logarithm, it follows that
+  Let \(c = \log_{b}(a)\). From the definition of a logarithm, it follows that
   \(b^c = a\).
 
   Taking the base-\(x\) logarithm on both sides gives the equation
 
   \begin{equation*}
-    \log_x(b^c) = \log_x(a).
+    \log_{x}(b^c) = \log_{x}(a).
   \end{equation*}
 
   Applying the logarithmic power law and solving for \(c\) leads to the equation
 
   \begin{equation*}
     \begin{split}
-      c\log_x(b) &= \log_x(a) \\
-      c &= \frac{\log_x(a)}{\log_x(b)}.
+      c\log_{x}(b) &= \log_{x}(a) \\
+      c &= \frac{\log_{x}(a)}{\log_{x}(b)}.
     \end{split}
   \end{equation*}
 
-  Since \(c = \log_b(a)\), the above can be written as
+  Since \(c = \log_{b}(a)\), the above can be written as
 
   \begin{equation*}
-    \log_b(a) = \frac{\log_x(a)}{\log_x(b)}
+    \log_{b}(a) = \frac{\log_{x}(a)}{\log_{x}(b)}
   \end{equation*}
 
   with the use of substitution.
