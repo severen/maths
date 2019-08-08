@@ -101,4 +101,139 @@ simply retellings of that which has already been proven.
   factor of 2.
 \end{proof}
 
+\section{Logarithms}
+
+\subsection{The Product Law}
+
+\begin{theorem}
+  A logarithm of the form \(\log_b(xy)\) can be expressed as \(\log_b(x) +
+  \log_b(y)\).
+\end{theorem}
+
+\begin{proof}
+  Let \(x = b^m\) and \(y = b^n\). From the definition of a logarithm, it
+  follows that \(\log_b(x) = m\) and \(\log_b(y) = n\).
+
+  Substituting \(b^m\) and \(b^n\) for \(x\) and \(y\) in the expression
+  \(\log_b(xy)\) gives the equation
+
+  \begin{equation*}
+    \begin{split}
+      \log_b(xy) &= \log_b(b^m · b^n) \\
+      &= \log_b(b^{m + n}) \\
+      &= m + n.
+    \end{split}
+  \end{equation*}
+
+  Since \(m = \log_b(x)\) and \(n = \log_b(y)\), the above can be written as
+
+  \begin{equation*}
+    \log_b(xy) = \log_b(x) + \log_b(y)
+  \end{equation*}
+
+  with the use of substitution.
+\end{proof}
+
+\subsection{The Quotient Law}
+
+\begin{theorem}
+  A logarithm of the form \(\log_b(\frac{x}{y})\) can be expressed as
+  \(\log_b(x) - \log_b(y)\).
+\end{theorem}
+
+\begin{proof}
+  Let \(x = b^m\) and \(y = b^n\). From the definition of a logarithm, it
+  follows that \(\log_b(x) = m\) and \(\log_b(y) = n\).
+
+  Substituting \(b^m\) and \(b^n\) for \(x\) and \(y\) in the expression
+  \(\log_b(\frac{x}{y})\) gives the equation
+
+  \begin{equation*}
+    \begin{split}
+      \log_b\big(\frac{x}{y}\big) &= \log_b\big(\frac{b^m}{b^n}\big) \\
+      &= \log_b(b^{m - n}) \\
+      &= m - n.
+    \end{split}
+  \end{equation*}
+
+  Since \(m = \log_b(x)\) and \(n = \log_b(y)\), the above can be written as
+
+  \begin{equation*}
+    \log_b\big(\frac{x}{y}\big) = \log_b(x) - \log_b(y)
+  \end{equation*}
+
+  with the use of substitution.
+\end{proof}
+
+\subsection{The Power Law}
+
+\begin{theorem}
+  A logarithm of the form \(\log_b(x^y)\) can be expressed as \(y ·
+  \log_b(x)\).
+\end{theorem}
+
+\begin{proof}
+  Let \(x = b^{c}\). From the definition of a logarithm, it follows that
+  \(\log_b(x) = c\).
+
+  Substituting \(b^c\) for \(x\) in the expression \(\log_b(x^y)\) gives the
+  equation
+
+  \begin{equation*}
+    \begin{split}
+      \log_b(x^y) &= \log_b({(b^c)}^y) \\
+      &= \log_b(b^{cy}) \\
+      &= cy
+    \end{split}
+  \end{equation*}
+
+  Since \(x = \log_b\), the above can be written as
+
+  \begin{equation*}
+    \begin{split}
+      \log_b(x^y) &= \log_b(x) · y \\
+      &= y · \log_b(x)
+    \end{split}
+  \end{equation*}
+
+  with the use of substitution.
+\end{proof}
+
+\subsection{The Change of Base Formula}
+
+\begin{theorem}
+  Any logarithm \(\log_b(a)\) can be re-expressed in terms of another base with the formula
+
+  \[ \log_b(a) = \frac{\log_x(a)}{\log_x(b)}. \]
+\end{theorem}
+
+\begin{proof}
+
+  Let \(c = \log_b(a)\). From the definition of a logarithm, it follows that
+  \(b^c = a\).
+
+  Taking the base-\(x\) logarithm on both sides gives the equation
+
+  \begin{equation*}
+    \log_x(b^c) = \log_x(a).
+  \end{equation*}
+
+  Applying the logarithmic power law and solving for \(c\) leads to the equation
+
+  \begin{equation*}
+    \begin{split}
+      c\log_x(b) &= \log_x(a) \\
+      c &= \frac{\log_x(a)}{\log_x(b)}.
+    \end{split}
+  \end{equation*}
+
+  Since \(c = \log_b(a)\), the above can be written as
+
+  \begin{equation*}
+    \log_b(a) = \frac{\log_x(a)}{\log_x(b)}
+  \end{equation*}
+
+  with the use of substitution.
+\end{proof}
+
 \end{document}
