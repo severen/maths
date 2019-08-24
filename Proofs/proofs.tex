@@ -21,18 +21,12 @@ hypothesis, the Collatz conjecture, or anything else like that.
 \section{The Quadratic Formula}
 
 \begin{theorem}
-  The solutions of a quadratic equation of the form \(ax^{2} + bx + c = 0\) can
-  be found with the formula
-
-  \[ x = \frac{-b ±\sqrt{b^{2} - 4ac}}{2a}, \]
-
-  where \(a ≠ 0\).
+  The solutions of a quadratic equation of the form \(ax^{2} + bx + c = 0\) are
+  \[ x = \frac{-b ±\sqrt{b^{2} - 4ac}}{2a}. \]
 \end{theorem}
 
 \begin{proof}
-  Completing the square on the general quadratic equation \(ax^{2} + bx + c =
-  0\) gives
-
+  Let \(ax^{2} + bx + c = 0\). Completing the square gives the equation
   \begin{align*}
     ax^{2} + bx + c &= 0 \\
     ax^{2} + bx &= -c \\
@@ -41,8 +35,7 @@ hypothesis, the Collatz conjecture, or anything else like that.
     {(x + \frac{b}{2a})}^{2} &= \frac{b^{2}}{4a^{2}} - \frac{c}{a}.
   \end{align*}
 
-  This allows for isolating \(x\), giving
-
+  Solving for \(x\) results in
   \begin{align*}
     {(x + \frac{b}{2a})}^{2} &= \frac{b^{2}}{2a^{2}} - \frac{c}{a} \\
     {(x + \frac{b}{2a})}^{2} &= \frac{b^{2}}{4a^{2}} - \frac{4ac}{4a^{2}} \\
@@ -51,33 +44,28 @@ hypothesis, the Collatz conjecture, or anything else like that.
     x &= -\frac{b}{2a} ±\frac{\sqrt{b^{2} - 4ac}}{2a} \\
     x &= \frac{-b ± \sqrt{b^{2} - 4ac}}{2a},
   \end{align*}
-
   which is the quadratic formula.
 \end{proof}
 
 \section{Irrationality of \(\sqrt{2}\)}
 
 \begin{theorem}
-  The square root of two, \(\sqrt{2}\), can not be represented as a ratio of two
-  integers, and therefore is irrational.
+  The square root of two (\(\sqrt{2}\)) is irrational.
 \end{theorem}
 
 \begin{proof}
   Suppose that \(\sqrt{2}\) is rational and thus can be written as the ratio of
   two integers \(\frac{a}{b}\), where \(a\) is prime to \(b\) (\(a ⟂ b\)).
   Therefore, we can state that
-
   \begin{align*}
     \sqrt{2} &= \frac{a}{b} \\
     2 &= \frac{a^{2}}{b^{2}}.
   \end{align*}
 
   Rearranging for \(a^{2}\) gives the equation
-
   \begin{equation*}
     a^{2} = 2b^{2},
   \end{equation*}
-
   which shows that \(a^{2}\) is even, since \(2b^{2}\) is necessarily even
   because it is a multiple of 2.
 
@@ -86,13 +74,11 @@ hypothesis, the Collatz conjecture, or anything else like that.
   \(a = 2k\).
 
   Substituting \(2k\) for \(a\) leads to
-
   \begin{align*}
     {(2k)}^{2} &= 2b^{2} \\
     4k^{2} &= 2b^{2} \\
     2k^{2} &= b^{2},
   \end{align*}
-
   which demonstrates that \(b^{2}\) and therefore \(b\) itself must be even,
   using the same reasoning as with \(a^{2}\).
 
@@ -106,7 +92,7 @@ hypothesis, the Collatz conjecture, or anything else like that.
 \subsection{The Product Law}
 
 \begin{theorem}
-  A logarithm of the form \(\log_{b}(xy)\) can be expressed as \(\log_{b}(x) +
+  A logarithm of the form \(\log_{b}(xy)\) is equivalent to \(\log_{b}(x) +
   \log_{b}(y)\).
 \end{theorem}
 
@@ -116,7 +102,6 @@ hypothesis, the Collatz conjecture, or anything else like that.
 
   Substituting \(b^{m}\) and \(b^{n}\) for \(x\) and \(y\) in the expression
   \(\log_{b}(xy)\) gives the equation
-
   \begin{equation*}
     \begin{split}
       \log_{b}(xy) &= \log_{b}(b^{m} · b^{n}) \\
@@ -126,18 +111,16 @@ hypothesis, the Collatz conjecture, or anything else like that.
   \end{equation*}
 
   Since \(m = \log_{b}(x)\) and \(n = \log_{b}(y)\), the above can be written as
-
   \begin{equation*}
-    \log_{b}(xy) = \log_{b}(x) + \log_{b}(y)
+    \log_{b}(xy) = \log_{b}(x) + \log_{b}(y),
   \end{equation*}
-
-  with the use of substitution.
+  which is the desired identity.
 \end{proof}
 
 \subsection{The Quotient Law}
 
 \begin{theorem}
-  A logarithm of the form \(\log_{b}(\frac{x}{y})\) can be expressed as
+  A logarithm of the form \(\log_{b}(\frac{x}{y})\) is equivalent to
   \(\log_{b}(x) - \log_{b}(y)\).
 \end{theorem}
 
@@ -147,7 +130,6 @@ hypothesis, the Collatz conjecture, or anything else like that.
 
   Substituting \(b^{m}\) and \(b^{n}\) for \(x\) and \(y\) in the expression
   \(\log_{b}(\frac{x}{y})\) gives the equation
-
   \begin{equation*}
     \begin{split}
       \log_{b}\big(\frac{x}{y}\big) &= \log_{b}\big(\frac{b^{m}}{b^{n}}\big) \\
@@ -157,19 +139,16 @@ hypothesis, the Collatz conjecture, or anything else like that.
   \end{equation*}
 
   Since \(m = \log_{b}(x)\) and \(n = \log_{b}(y)\), the above can be written as
-
   \begin{equation*}
     \log_{b}\big(\frac{x}{y}\big) = \log_{b}(x) - \log_{b}(y)
   \end{equation*}
-
-  with the use of substitution.
+  which is the desired formula.
 \end{proof}
 
 \subsection{The Power Law}
 
 \begin{theorem}
-  A logarithm of the form \(\log_{b}(x^{y})\) can be expressed as \(y ·
-  \log_{b}(x)\).
+  A logarithm of the form \(\log_{b}(x^{y})\) is equivalent to \(y\log_{b}(x)\).
 \end{theorem}
 
 \begin{proof}
@@ -178,7 +157,6 @@ hypothesis, the Collatz conjecture, or anything else like that.
 
   Substituting \(b^{n}\) for \(x\) in the expression \(\log_{b}(x^{y})\) gives
   the equation
-
   \begin{equation*}
     \begin{split}
       \log_{b}(x^{y}) &= \log_{b}({(b^{n})}^{y}) \\
@@ -188,39 +166,33 @@ hypothesis, the Collatz conjecture, or anything else like that.
   \end{equation*}
 
   Since \(n = \log_{b}(x)\), the above can be written as
-
   \begin{equation*}
     \begin{split}
       \log_{b}(x^{y}) &= \log_{b}(x) · y \\
-      &= y · \log_{b}(x)
+      &= y\log_{b}(x)
     \end{split}
   \end{equation*}
-
-  with the use of substitution.
+  which is the desired formula.
 \end{proof}
 
 \subsection{The Change of Base Formula}
 
 \begin{theorem}
-  Any logarithm \(\log_{b}(a)\) can be re-expressed in terms of another base
-  with the formula
-
+  Any logarithm \(\log_{b}(a)\) can be rewritten in terms of another base with
+  the formula
   \[ \log_{b}(a) = \frac{\log_{x}(a)}{\log_{x}(b)}. \]
 \end{theorem}
 
 \begin{proof}
-
   Let \(c = \log_{b}(a)\). From the definition of a logarithm, it follows that
   \(b^c = a\).
 
   Taking the base-\(x\) logarithm on both sides gives the equation
-
   \begin{equation*}
     \log_{x}(b^c) = \log_{x}(a).
   \end{equation*}
 
   Applying the logarithmic power law and solving for \(c\) leads to the equation
-
   \begin{equation*}
     \begin{split}
       c\log_{x}(b) &= \log_{x}(a) \\
@@ -229,12 +201,10 @@ hypothesis, the Collatz conjecture, or anything else like that.
   \end{equation*}
 
   Since \(c = \log_{b}(a)\), the above can be written as
-
   \begin{equation*}
     \log_{b}(a) = \frac{\log_{x}(a)}{\log_{x}(b)}
   \end{equation*}
-
-  with the use of substitution.
+  which is the change of base formula.
 \end{proof}
 
 \end{document}
