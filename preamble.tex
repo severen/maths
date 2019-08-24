@@ -21,6 +21,13 @@
 \usepackage{unicode-math}
 \usepackage[free-standing-units]{siunitx}
 
+% Improve spacing before theorem environments.
+\makeatletter
+\def\thm@space@setup{%
+  \thm@preskip=\parskip % chktex 1
+}
+\makeatother
+
 %% Language %%
 \usepackage{csquotes}
 \usepackage{polyglossia}
