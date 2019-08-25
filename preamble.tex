@@ -17,9 +17,14 @@
 \usepackage{mathtools}
 \usepackage{amssymb}
 \usepackage{amsthm}
-\usepackage{commath}
 \usepackage{unicode-math}
 \usepackage[free-standing-units]{siunitx}
+
+% Custom Maths Commands
+\DeclarePairedDelimiter\abs{\lvert}{\rvert}
+\DeclarePairedDelimiter\norm{\lVert}{\rVert}
+\DeclarePairedDelimiter\ceil{\lceil}{\rceil}
+\DeclarePairedDelimiter\floor{\lfloor}{\rfloor}
 
 % Improve spacing before theorem environments.
 \makeatletter
