@@ -20,11 +20,15 @@
 \usepackage{unicode-math}
 \usepackage[free-standing-units]{siunitx}
 
-% Custom Maths Commands
+% Absolute value/norms and floor/ceiling
 \DeclarePairedDelimiter\abs{\lvert}{\rvert}
 \DeclarePairedDelimiter\norm{\lVert}{\rVert}
 \DeclarePairedDelimiter\ceil{\lceil}{\rceil}
 \DeclarePairedDelimiter\floor{\lfloor}{\rfloor}
+
+% Permutations and combinations
+\newcommand*{\perm}[2]{\prescript{#1}{}P_{#2}}
+\newcommand*{\comb}[2]{\prescript{#1}{}C_{#2}}
 
 % Improve spacing before theorem environments.
 \makeatletter
