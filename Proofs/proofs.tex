@@ -4,6 +4,13 @@
 
 \newtheorem*{theorem}{Theorem}
 
+% Improve spacing before theorem environments.
+\makeatletter
+\def\thm@space@setup{%
+  \thm@preskip=\parskip % chktex 1
+}
+\makeatother
+
 \title{Proofs}
 \author{Severen Redwood}
 
