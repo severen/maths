@@ -31,9 +31,10 @@
 \newcommand*{\perm}[2]{\prescript{#1}{}P_{#2}}
 \newcommand*{\comb}[2]{\prescript{#1}{}C_{#2}}
 
-% Derivatives
+% Differentiation
 \DeclareMathOperator{\dif}{d\!}
-\DeclareMathOperator{\Dif}{D\!}
+\newcommand*{\od}[3][]{\frac{\dif{^{#1}}#2}{\dif{#3^{#1}}}}
+\newcommand*{\pd}[3][]{\frac{\partial{^{#1}}#2}{\partial{#3^{#1}}}}
 
 % Theorem environments
 \newtheorem*{theorem}{Theorem}
