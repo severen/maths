@@ -1,8 +1,5 @@
 %% Common Packages and Configuration
 
-% Generate ActualText annotations for better copy/paste in some PDF readers.
-\XeTeXgenerateactualtext=1
-
 %% Typography and Style %%
 \usepackage{microtype}
 \usepackage{booktabs}
@@ -21,13 +18,13 @@
 \usepackage[free-standing-units]{siunitx}
 \usepackage{unicode-math}
 
-% Absolute value/norms and floor/ceiling
-\DeclarePairedDelimiter\abs{\lvert}{\rvert}
-\DeclarePairedDelimiter\norm{\lVert}{\rVert}
-\DeclarePairedDelimiter\ceil{\lceil}{\rceil}
-\DeclarePairedDelimiter\floor{\lfloor}{\rfloor}
+% Paired Delimiter Commands
+\DeclarePairedDelimiter{\abs}{\lvert}{\rvert}
+\DeclarePairedDelimiter{\norm}{\lVert}{\rVert}
+\DeclarePairedDelimiter{\ceil}{\lceil}{\rceil}
+\DeclarePairedDelimiter{\floor}{\lfloor}{\rfloor}
 
-% Permutations and combinations
+% Combinatorics
 \newcommand*{\perm}[2]{\prescript{#1}{}P_{#2}}
 \newcommand*{\comb}[2]{\prescript{#1}{}C_{#2}}
 
@@ -36,7 +33,7 @@
 \newcommand*{\od}[3][]{\frac{\dif{^{#1}}#2}{\dif{#3^{#1}}}}
 \newcommand*{\pd}[3][]{\frac{\partial{^{#1}}#2}{\partial{#3^{#1}}}}
 
-% Theorem environments
+% Theorem-style Environments
 \newtheorem*{theorem}{Theorem}
 \theoremstyle{definition}
 \newtheorem*{definition}{Definition}
