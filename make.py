@@ -1,7 +1,6 @@
 #!/usr/bin/env python3
 
-# This script compiles all LaTeX documents by locating their corresponding
-# Makfiles.
+# Compile all LaTeX documents by locating the corresponding Makfiles.
 
 import subprocess
 
