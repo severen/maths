@@ -30,8 +30,8 @@ and integrals.
 
 Formally, the limit of a function is written as \[ \lim_{x → c} f(x) = L, \] and
 is read as \enquote{the limit of \(f\) of \(x\) as \(x\) approaches \(c\) is
-  equal to \(L\)}. Occasionally, a limit may be denoted by a right arrow, as
-in \[ f(x) → L \text{ as } x → c. \]
+  equal to \(L\)}. Occasionally, a limit may be denoted by a right arrow:
+\[ f(x) → L \text{ as } x → c. \]
 
 \emph{Continuity} is the property of a function where \emph{sufficiently small
   changes in the input result in sufficiently small changes in the output}. A
@@ -47,11 +47,11 @@ the function \(a\) is discontinuous.
 \section{Limits at Infinity}
 
 A \emph{limit at infinity} is the value a function approaches as the input
-approaches positive or negative infinity (that is, as the input increases or
-decreases without bound). Formally, we write that
-\[ \lim_{x → ∞} f(x) = \text{ or } \lim_{x → -∞} f(x) = L. \]
+approaches positive or negative infinity—that is, as the input increases or
+decreases without bound. Formally, we write that
+\[ \lim_{x → ∞} f(x) = L \text{\quad or \quad} \lim_{x → -∞} f(x) = L. \]
 
-When computing limits at infinity, the following two facts are often useful:
+To compute such limits, the following two facts are often of use:
 
 \begin{nfact}
   If \(n ∈ ℚ^{+}\) and \(x ∈ ℝ\), then
@@ -65,7 +65,7 @@ When computing limits at infinity, the following two facts are often useful:
 
 \section{The Squeeze Theorem}
 
-The \emph{squeeze theorem}, or \emph{sandwich theorem}, is a theorem regarding
+The \emph{squeeze theorem} (or \emph{sandwich theorem}) is a theorem regarding
 the limit of a function as it is bounded by two other functions. It is useful
 when attempting to determine a limit of a function that is either difficult to
 determine or cannot be computed at a given point.
@@ -75,48 +75,50 @@ determine or cannot be computed at a given point.
   functions defined at all points on \(I\), except possibly at \(a\) itself.
 
   Suppose that for every \(x\) in \(I\) not equal to \(a\), we have
-  \[ g(x) ≤ f(x) ≤ h(x), \] and also suppose that
+  \[ g(x) ⩽ f(x) ⩽ h(x), \] and also suppose that
   \[ \lim_{x → a } g(x) = \lim_{x → a} h(x) = L. \] Then,
   \[ \lim_{x → a} f(x) = L. \]
 \end{theorem}
 
-\begin{figure}[h]
-  \centering
-
-  \begin{tikzpicture}
-    \begin{axis}[
-      xlabel = $x$,
-      ylabel = $y$,
-      ylabel style = { rotate = -90 },
-      xtick = \empty,
-      ytick = \empty,
-      xmin = -1.5, xmax = 1.5,
-      ymin = -1.75, ymax = 1.75,
-      axis lines = center,
-      samples = 200,
-      smooth,
-    ]
-      \addplot[] {x^2};
-      % The frequency is increased to make the illustration look better.
-      \addplot[thick, blue] {x^2 * sin(4 * 1/\x r)};
-      \addplot[] {-x^2};
-    \end{axis}
-  \end{tikzpicture}
-
-  \caption{Illustration of \(x^{2} \sin(\frac{1}{x})\) being squeezed as \(x → 0\).}\label{fig:squeeze_theorem}
-\end{figure}
-
 \begin{example}
-  The limit of \(x^{2} \sin(\frac{1}{x})\) as \(x → 0\) (see
+  The limit of \(x^{2} \sin(1/x)\) as \(x → 0\) (see
   \autoref{fig:squeeze_theorem}) cannot be determined through direct
-  substitution because \(\lim_{x → 0} \sin(\frac{1}{x})\) does not exist.
+  substitution because \(\lim_{x → 0} \sin(1/x)\) does not exist.
 
   However, by the definition of the sine function,
-  \[ -1 ≤ \sin(\frac{1}{x}) ≤ 1. \] Therefore, it follows that
-  \[ -x^{2} ≤ x^{2} \sin(\frac{1}{x}) ≤ x^{2}. \]
+  \[ -1 ⩽ \sin(1/x) ⩽ 1. \] Therefore, it follows that
+  \[ -x^{2} ⩽ x^{2} \sin(1/x) ⩽ x^{2}. \]
 
-  Since \[ \lim_{x → 0} -x^{2} = \lim_{x → 0} x^{2} = 0, \] by the squeeze
-  theorem, \(\lim_{x → 0} [x^{2} \sin(\frac{1}{x})]\) must also be zero.
+  \begin{figure}[h]
+    \centering
+
+    \begin{tikzpicture}
+      \begin{axis}[
+        xlabel = $x$,
+        ylabel = $y$,
+        ylabel style = { rotate = -90 },
+        xtick = \empty,
+        ytick = \empty,
+        xmin = -1.5, xmax = 1.5,
+        ymin = -1.75, ymax = 1.75,
+        axis lines = center,
+        samples = 200,
+        smooth,
+      ]
+        \addplot[] {x^2};
+        % The frequency is increased to make the illustration look better.
+        \addplot[thick, blue] {x^2 * sin(4 * 1/\x r)};
+        \addplot[] {-x^2};
+      \end{axis}
+    \end{tikzpicture}
+
+    \caption{Graph of \(x^{2} \sin(1/x)\) being squeezed as \(x →
+      0\).}\label{fig:squeeze_theorem}
+  \end{figure}
+
+  Since
+  \[ \lim_{x → 0} -x^{2} = \lim_{x → 0} x^{2} = 0, \] by the squeeze theorem,
+  \[ \lim_{x → 0} (x^{2} \sin(1/x)) = 0. \]
 \end{example}
 
 \section{Continuity at a Point}

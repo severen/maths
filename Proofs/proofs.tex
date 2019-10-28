@@ -24,7 +24,7 @@
 This document consists of various assorted proofs that I have written down, both
 for fun and in order to enhance my knowledge and understanding. Nothing in here
 is novel or new, so do not expect to find an amazing proof of the Riemann
-hypothesis, the Collatz conjecture, or anything else like that.
+hypothesis.
 
 \section{The Quadratic Formula}
 
@@ -58,30 +58,29 @@ hypothesis, the Collatz conjecture, or anything else like that.
 \section{Irrationality of \(\sqrt{2}\)}
 
 \begin{theorem}
-  The square root of two (\(\sqrt{2}\)) is irrational.
+  The number \(\sqrt{2}\) is irrational.
 \end{theorem}
 
 \begin{proof}
   Suppose that \(\sqrt{2}\) is rational and thus can be written as the ratio of
-  two integers \(\frac{a}{b}\), where \(a\) is prime to \(b\) (\(a ⟂ b\)).
-  Therefore, we can state that
+  two integers \(a/b\), where \(a\) and \(b\) are coprime. Therefore,
   \begin{align*}
     \sqrt{2} &= \frac{a}{b} \\
     2 &= \frac{a^{2}}{b^{2}}.
   \end{align*}
 
-  Rearranging for \(a^{2}\) gives the equation
+  Solving for \(a^{2}\) gives the equation
   \begin{equation*}
     a^{2} = 2b^{2},
   \end{equation*}
-  which shows that \(a^{2}\) is even, since \(2b^{2}\) is necessarily even
-  because it is a multiple of 2.
+  which shows that \(a^{2}\) is even, since \(2b^{2}\) is necessarily even as it
+  is a multiple of 2.
 
-  It follows that \(a\) must also be even, as squares of odd integers are never
-  even. Therefore, there exists some integer \(k\) that satisfies the equation
-  \(a = 2k\).
+  It follows that \(a\) must also be even, since squares of odd integers are
+  never even. Therefore, there exists some integer \(k\) that satisfies the
+  equation \(a = 2k\).
 
-  Substituting \(2k\) for \(a\) leads to
+  Substituting \(2k\) for \(a\) yields that
   \begin{align*}
     {(2k)}^{2} &= 2b^{2} \\
     4k^{2} &= 2b^{2} \\
@@ -91,8 +90,8 @@ hypothesis, the Collatz conjecture, or anything else like that.
   using the same reasoning as with \(a^{2}\).
 
   Since \(a\) and \(b\) are both even, the assumption that \(\sqrt{2}\) is
-  rational and \(a\) is prime to \(b\) no longer holds, as they share a common
-  factor of 2. Therefore, \(\sqrt{2}\) must be \textbf{irrational}.
+  rational and \(a\) and \(b\) are coprime no longer holds because they share a
+  common factor of 2. Therefore, \(\sqrt{2}\) must be \textbf{irrational}.
 \end{proof}
 
 \section{Logarithmic Identities}
@@ -112,7 +111,7 @@ hypothesis, the Collatz conjecture, or anything else like that.
   \(\log_{b}(xy)\) gives the equation
   \begin{equation*}
     \begin{split}
-      \log_{b}(xy) &= \log_{b}(b^{m} · b^{n}) \\
+      \log_{b}(xy) &= \log_{b}(b^{m}b^{n}) \\
       &= \log_{b}(b^{m + n}) \\
       &= m + n.
     \end{split}
@@ -128,7 +127,7 @@ hypothesis, the Collatz conjecture, or anything else like that.
 \subsection{The Quotient Law}
 
 \begin{theorem}
-  A logarithm of the form \(\log_{b}(\frac{x}{y})\) is equivalent to
+  A logarithm of the form \(\log_{b}(x/y)\) is equivalent to
   \(\log_{b}(x) - \log_{b}(y)\).
 \end{theorem}
 
@@ -137,10 +136,10 @@ hypothesis, the Collatz conjecture, or anything else like that.
   follows that \(\log_{b}(x) = m\) and \(\log_{b}(y) = n\).
 
   Substituting \(b^{m}\) and \(b^{n}\) for \(x\) and \(y\) in the expression
-  \(\log_{b}(\frac{x}{y})\) gives the equation
+  \(\log_{b}(x/y)\) gives the equation
   \begin{equation*}
     \begin{split}
-      \log_{b}\big(\frac{x}{y}\big) &= \log_{b}\big(\frac{b^{m}}{b^{n}}\big) \\
+      \log_{b}(\frac{x}{y}) &= \log_{b}(\frac{b^{m}}{b^{n}}) \\
       &= \log_{b}(b^{m - n}) \\
       &= m - n.
     \end{split}
@@ -148,7 +147,7 @@ hypothesis, the Collatz conjecture, or anything else like that.
 
   Since \(m = \log_{b}(x)\) and \(n = \log_{b}(y)\), the above can be written as
   \begin{equation*}
-    \log_{b}\big(\frac{x}{y}\big) = \log_{b}(x) - \log_{b}(y),
+    \log_{b}(\frac{x}{y}) = \log_{b}(x) - \log_{b}(y),
   \end{equation*}
   which is the desired identity.
 \end{proof}
@@ -156,7 +155,8 @@ hypothesis, the Collatz conjecture, or anything else like that.
 \subsection{The Power Law}
 
 \begin{theorem}
-  A logarithm of the form \(\log_{b}(x^{y})\) is equivalent to \(y\log_{b}(x)\).
+  A logarithm of the form \(\log_{b}(x^{y})\) is equivalent to \(y
+  \log_{b}(x)\).
 \end{theorem}
 
 \begin{proof}
@@ -176,8 +176,7 @@ hypothesis, the Collatz conjecture, or anything else like that.
   Since \(n = \log_{b}(x)\), the above can be written as
   \begin{equation*}
     \begin{split}
-      \log_{b}(x^{y}) &= \log_{b}(x) · y \\
-      &= y\log_{b}(x),
+      \log_{b}(x^{y}) &= y\log_{b}(x)
     \end{split}
   \end{equation*}
   which is the desired identity.
