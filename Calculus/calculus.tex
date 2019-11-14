@@ -121,11 +121,38 @@ determine or cannot be computed at a given point.
   \[ \lim_{x → 0} (x^{2} \sin(1/x)) = 0. \]
 \end{example}
 
-\section{Continuity at a Point}
+\section{Continuity}
 
-A function \(f\) is said to be continuous at \(c\) if it is both defined at
-\(c\) and its value at \(c\) equals the limit of \(f\) as \(x\) approaches
-\(c\): \[ \lim_{x → c} f(x) = f(c) \]
+A function \(f\) is said to be \emph{continuous} at \(x = c\) if it is both
+defined at \(c\) and \[ \lim_{x → c} f(x) = f(c). \] If a function satisfies
+this property at \emph{all points} in its domain, it is a \emph{continuous
+  function}.
+
+\begin{nexample}
+  The polynomial function \[ f(x) = x^{2} - 4 \] is continuous, as at every
+  point it satisfies the definition of continuity at a point (in fact, \emph{all
+    polynomials} are continuous functions). This can be intuitively seen in
+  \autoref{fig:graph_1}.
+
+  \begin{figure}[h]
+    \centering
+
+    \begin{tikzpicture}
+      \begin{axis}[
+        xlabel = $x$,
+        ylabel = $y$,
+        ylabel style = { rotate = -90 },
+        axis lines = center,
+        samples = 200,
+        smooth,
+      ]
+        \addplot[thick, blue] {x^2 - 4};
+      \end{axis}
+    \end{tikzpicture}
+
+    \caption{Graph of \(f(x) = x^{2} - 4\).}\label{fig:graph_1}
+  \end{figure}
+\end{nexample}
 
 \chapter{Differentiation}
 
