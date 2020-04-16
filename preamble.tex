@@ -37,6 +37,16 @@
 % Complex Conjugates
 \newcommand*{\conj}[1]{\overbar{#1}}
 
+% Linear Algebra
+% Hack support for augmented matrices into the matrix commands.
+\makeatletter
+\renewcommand*{\env@matrix}[1][*\c@MaxMatrixCols c]{
+  \hskip -\arraycolsep
+  \let\@ifnextchar\new@ifnextchar
+  \array{#1}
+}
+\makeatother
+
 % Statistics
 \newcommand*{\mean}[1]{\overbar{#1}}
 
