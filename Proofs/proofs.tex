@@ -1,217 +1,367 @@
-\documentclass[parskip, headings=standardclasses]{scrartcl}
+\documentclass[headings=standardclasses]{scrartcl}
 
 \input{../preamble.tex}
 
-% PDF Metadata
-\hypersetup{
-  pdftitle={Proofs}
-}
-
-% Improve spacing before theorem environments.
+% Add horizontal rules under top-level section headings.
 \makeatletter
-\def\thm@space@setup{%
-  \thm@preskip=\parskip % chktex 1
+\renewcommand{\sectionlinesformat}[4]{
+  \ifstr{#1}{section}{
+    \parbox[t]{\linewidth}{
+      \@hangfrom{\hskip #2#3}{#4}\par
+      \kern-0.9\ht\strutbox \rule{\linewidth}{0.6pt}
+    }%
+  }{\@hangfrom{\hskip #2#3}{#4}}
 }
 \makeatother
 
-\title{Proofs}
+\setmainfont{TeX Gyre Pagella}
+\setmathfont{TeX Gyre Pagella Math}
+
+% PDF Metadata
+\hypersetup{
+  pdftitle={Proof Playground}
+}
+
+\title{Proof Playground}
 \author{Severen Redwood}
+\date{}
 
 \begin{document}
 
 \maketitle
 
-This document consists of various assorted proofs that I have written down, both
-for fun and in order to enhance my knowledge and understanding. Nothing in here
-is novel or new, so do not expect to find an amazing proof of the Riemann
-hypothesis.
+\noindent This document serves as my playground for practising the art of
+writing mathematical proofs. As such, do not expect to find a proof of the
+Riemann hypothesis here, or indeed anything else that is original. Instead, you
+will find a range of proofs related to mostly standard undergraduate material
+that I \textit{hope} are correct.
 
-\section{The Quadratic Formula}
+\section*{Algebra}
 
-\begin{theorem}
-  The solutions of a quadratic equation of the form \(ax^{2} + bx + c = 0\) are
-  \[ x = \frac{-b ±\sqrt{b^{2} - 4ac}}{2a}. \]
+\begin{theorem}[Quadratic Formula]
+  The solutions of the quadratic equation of the form \(ax^2 + bx + c = 0\) are
+  \[ x = \frac{-b ±\sqrt{b^2 - 4ac}}{2a}. \]
 \end{theorem}
 
 \begin{proof}
-  Let \(ax^{2} + bx + c = 0\). Completing the square gives the equation
-  \begin{align*}
-    ax^{2} + bx + c &= 0 \\
-    ax^{2} + bx &= -c \\
-    x^{2} + \frac{b}{a}x &= -\frac{c}{a} \\
-    x^{2} + \frac{b}{a}x + \frac{b^{2}}{4a^{2}} &= \frac{b^{2}}{4a^{2}} - \frac{c}{a} \\
-    {(x + \frac{b}{2a})}^{2} &= \frac{b^{2}}{4a^{2}} - \frac{c}{a}.
-  \end{align*}
-
-  Solving for \(x\) results in
-  \begin{align*}
-    {(x + \frac{b}{2a})}^{2} &= \frac{b^{2}}{2a^{2}} - \frac{c}{a} \\
-    {(x + \frac{b}{2a})}^{2} &= \frac{b^{2}}{4a^{2}} - \frac{4ac}{4a^{2}} \\
-    {(x + \frac{b}{2a})}^{2} &= \frac{b^{2} - 4ac}{4a^{2}} \\
-    x + \frac{b}{2a} &= ±\frac{\sqrt{b^{2} - 4ac}}{2a} \\
-    x &= -\frac{b}{2a} ±\frac{\sqrt{b^{2} - 4ac}}{2a} \\
-    x &= \frac{-b ± \sqrt{b^{2} - 4ac}}{2a},
-  \end{align*}
-  which is the quadratic formula.
-\end{proof}
-
-\section{Irrationality of \(\sqrt{2}\)}
-
-\begin{theorem}
-  The number \(\sqrt{2}\) is irrational.
-\end{theorem}
-
-\begin{proof}
-  Suppose that \(\sqrt{2}\) is rational and thus can be written as the ratio of
-  two integers \(a/b\), where \(a\) and \(b\) are coprime. Therefore,
-  \begin{align*}
-    \sqrt{2} &= \frac{a}{b} \\
-    2 &= \frac{a^{2}}{b^{2}}.
-  \end{align*}
-
-  Solving for \(a^{2}\) gives the equation
+  Let \(ax^{2} + bx + c = 0\). Complete the square to obtain
   \begin{equation*}
-    a^{2} = 2b^{2},
+    {\left(x + \frac{b}{2a}\right)}^2 = \frac{b^{2}}{4a^{2}} - \frac{c}{a}.
   \end{equation*}
-  which shows that \(a^{2}\) is even, since \(2b^{2}\) is necessarily even as it
-  is a multiple of 2.
-
-  It follows that \(a\) must also be even, since squares of odd integers are
-  never even. Therefore, there exists some integer \(k\) that satisfies the
-  equation \(a = 2k\).
-
-  Substituting \(2k\) for \(a\) yields that
-  \begin{align*}
-    {(2k)}^{2} &= 2b^{2} \\
-    4k^{2} &= 2b^{2} \\
-    2k^{2} &= b^{2},
-  \end{align*}
-  which demonstrates that \(b^{2}\) and therefore \(b\) itself must be even,
-  using the same reasoning as with \(a^{2}\).
-
-  Since \(a\) and \(b\) are both even, the assumption that \(\sqrt{2}\) is
-  rational and \(a\) and \(b\) are coprime no longer holds because they share a
-  common factor of 2. Therefore, \(\sqrt{2}\) must be \textbf{irrational}.
+  Solve for \(x\) to obtain
+  \begin{equation*}
+    x = -\frac{b}{2a} ±\frac{\sqrt{b^2 - 4ac}}{2a}.
+  \end{equation*}
+  Thus,
+  \begin{equation*}
+    x = \frac{-b ± \sqrt{b^2 - 4ac}}{2a},
+  \end{equation*}
+  as desired.
 \end{proof}
 
-\section{Logarithmic Identities}
+\begin{theorem}[Logarithm of a Product]
+  \(\displaystyle \log_{b}(xy) = \log_{b}(x) + \log_{b}(y)\).
+\end{theorem}
 
-\subsection{The Product Law}
+\begin{proof}
+  Let \(x ≔ b^m\) and \(y ≔ b^n\). From the definition of a logarithm, it
+  follows that \(\log_b(x) = m\) and \(\log_b(y) = n\).
 
-\begin{theorem}
-  A logarithm of the form \(\log_{b}(xy)\) is equivalent to \(\log_{b}(x) +
+  By substituting \(b^m\) and \(b^n\) for \(x\) and \(y\) in \(\log_b(xy)\),
+  \begin{equation*}
+  \begin{split}
+    \log_b(xy) &= \log_b(b^{m}b^{n}) \\
+               &= \log_b(b^{m + n}) \\
+               &= m + n.
+  \end{split}
+  \end{equation*}
+  Since \(m = \log_b(x)\) and \(n = \log_b(y)\), the above can be written as
+  \begin{equation*}
+    \log_b(xy) = \log_b(x) + \log_b(y),
+  \end{equation*}
+  which is the desired identity.
+\end{proof}
+
+\begin{theorem}[Logarithm of a Quotient]
+  \(\displaystyle \log_{b}\left(\frac{x}{y}\right) = \log_{b}(x) -
   \log_{b}(y)\).
 \end{theorem}
 
 \begin{proof}
-  Let \(x = b^{m}\) and \(y = b^{n}\). From the definition of a logarithm, it
-  follows that \(\log_{b}(x) = m\) and \(\log_{b}(y) = n\).
+  Let \(x ≔ b^m\) and \(y ≔ b^n\). From the definition of a logarithm, it
+  follows that \(\log_b(x) = m\) and \(\log_b(y) = n\).
 
-  Substituting \(b^{m}\) and \(b^{n}\) for \(x\) and \(y\) in the expression
-  \(\log_{b}(xy)\) gives the equation
+  By substituting \(b^m\) and \(b^n\) for \(x\) and \(y\) in \(\log_b(x/y)\),
   \begin{equation*}
-    \begin{split}
-      \log_{b}(xy) &= \log_{b}(b^{m}b^{n}) \\
-      &= \log_{b}(b^{m + n}) \\
-      &= m + n.
-    \end{split}
+  \begin{split}
+    \log_b\left(\frac{x}{y}\right) &= \log_b\left(\frac{b^m}{b^n}\right) \\
+                                   &= \log_b(b^{m - n}) \\
+                                   &= m - n.
+  \end{split}
   \end{equation*}
-
-  Since \(m = \log_{b}(x)\) and \(n = \log_{b}(y)\), the above can be written as
+  Since \(m = \log_b(x)\) and \(n = \log_b(y)\), the above can be written as
   \begin{equation*}
-    \log_{b}(xy) = \log_{b}(x) + \log_{b}(y),
+    \log_b\left(\frac{x}{y}\right) = \log_{b}(x) - \log_{b}(y),
   \end{equation*}
   which is the desired identity.
 \end{proof}
 
-\subsection{The Quotient Law}
-
-\begin{theorem}
-  A logarithm of the form \(\log_{b}(x/y)\) is equivalent to
-  \(\log_{b}(x) - \log_{b}(y)\).
+\begin{theorem}[Logarithm of a Power]
+  \(\displaystyle \log_{b}(x^y) = y\log_{b}(x)\).
 \end{theorem}
 
 \begin{proof}
-  Let \(x = b^{m}\) and \(y = b^{n}\). From the definition of a logarithm, it
-  follows that \(\log_{b}(x) = m\) and \(\log_{b}(y) = n\).
+  Let \(x ≔ b^n\). From the definition of a logarithm, it
+  follows that \(\log_b(x) = n\).
 
-  Substituting \(b^{m}\) and \(b^{n}\) for \(x\) and \(y\) in the expression
-  \(\log_{b}(x/y)\) gives the equation
+  By substituting \(b^n\) for \(x\) in \(\log_b(x^y)\),
   \begin{equation*}
-    \begin{split}
-      \log_{b}(\frac{x}{y}) &= \log_{b}(\frac{b^{m}}{b^{n}}) \\
-      &= \log_{b}(b^{m - n}) \\
-      &= m - n.
-    \end{split}
+  \begin{split}
+    \log_b(x^y) &= \log_b({(b^n)}^y) \\
+                &= \log_b(b^{yn}) \\
+                &= yn.
+  \end{split}
   \end{equation*}
-
-  Since \(m = \log_{b}(x)\) and \(n = \log_{b}(y)\), the above can be written as
+  Since \(n = \log_b(x)\), the above can be written as
   \begin{equation*}
-    \log_{b}(\frac{x}{y}) = \log_{b}(x) - \log_{b}(y),
+    \log_b(x^y) = y\log_b(x),
   \end{equation*}
   which is the desired identity.
 \end{proof}
 
-\subsection{The Power Law}
-
-\begin{theorem}
-  A logarithm of the form \(\log_{b}(x^{y})\) is equivalent to \(y
-  \log_{b}(x)\).
-\end{theorem}
-
-\begin{proof}
-  Let \(x = b^{n}\). From the definition of a logarithm, it follows that
-  \(\log_{b}(x) = n\).
-
-  Substituting \(b^{n}\) for \(x\) in the expression \(\log_{b}(x^{y})\) gives
-  the equation
-  \begin{equation*}
-    \begin{split}
-      \log_{b}(x^{y}) &= \log_{b}({(b^{n})}^{y}) \\
-      &= \log_{b}(b^{ny}) \\
-      &= ny
-    \end{split}
-  \end{equation*}
-
-  Since \(n = \log_{b}(x)\), the above can be written as
-  \begin{equation*}
-    \begin{split}
-      \log_{b}(x^{y}) &= y\log_{b}(x)
-    \end{split}
-  \end{equation*}
-  which is the desired identity.
-\end{proof}
-
-\subsection{The Change of Base Formula}
-
-\begin{theorem}
-  Any logarithm \(\log_{b}(a)\) can be rewritten in terms of another base with
-  the formula
+\begin{theorem}[Change of Base Formula]
+  Any logarithm can be rewritten in terms of another base with the formula
   \[ \log_{b}(a) = \frac{\log_{x}(a)}{\log_{x}(b)}. \]
 \end{theorem}
 
 \begin{proof}
-  Let \(c = \log_{b}(a)\). From the definition of a logarithm, it follows that
-  \(b^c = a\).
-
-  Taking the base-\(x\) logarithm on both sides gives the equation
+  Let \(c \coloneqq \log_b(a)\). From the definition of a logarithm, it follows
+  that \(b^c = a\). By taking the base-\(x\) logarithm of both sides,
   \begin{equation*}
-    \log_{x}(b^c) = \log_{x}(a).
+      \log_x(b^c) = \log_x(a).
   \end{equation*}
-
-  Applying the logarithmic power law and solving for \(c\) leads to the equation
+  Therefore,
+  \begin{align*}
+      c\log_x(b) &= \log_x(a) \\
+               c &= \frac{\log_x(a)}{\log_x(b)}.
+  \end{align*}
+  Since \(c = \log_b(a)\), the above can be written as
   \begin{equation*}
-    \begin{split}
-      c\log_{x}(b) &= \log_{x}(a) \\
-      c &= \frac{\log_{x}(a)}{\log_{x}(b)}.
-    \end{split}
-  \end{equation*}
-
-  Since \(c = \log_{b}(a)\), the above can be written as
-  \begin{equation*}
-    \log_{b}(a) = \frac{\log_{x}(a)}{\log_{x}(b)},
+    \log_b(a) = \frac{\log_x(a)}{\log_x(b)},
   \end{equation*}
   which is the change of base formula.
+\end{proof}
+
+\section*{Number Theory}
+
+\begin{result}
+  The number \(\sqrt{2}\) is irrational.
+\end{result}
+
+\begin{proof}
+  Suppose that \(\sqrt{2}\) is rational, and so it can be expressed as a ratio
+  of two integers. Hence, let \(\sqrt{2} = a/b\), where \(a\) and \(b\) are
+  coprime. By squaring both sides,
+  \begin{equation*}
+    2 = \frac{a^2}{b^2} ⟺ 2b^2 = a^2.
+  \end{equation*}
+  Therefore, \(a^2\) is even, and in turn, \(a\) is also even, since squares of
+  odd integers are never even. Hence, there exists some integer \(k\) such that
+  \(a = 2k\). By substituting this in,
+  \begin{equation*}
+    2b^2 = {(2k)}^2 ⟺ b^2 = 2k^2.
+  \end{equation*}
+  Using the same reasoning as with \(a\), it must be that \(b\) is also even.
+  However, since \(a\) and \(b\) are both even, a contradiction arises. Two
+  even integers cannot be coprime, so \(\sqrt{2}\) cannot be expressed as a
+  ratio of two integers. Thus, \(\sqrt{2}\) is irrational.
+\end{proof}
+
+\begin{theorem}
+  There are infinitely many prime numbers.
+\end{theorem}
+
+\begin{proof}
+  Suppose there are only finitely many prime numbers. Let \(p_1, p_2, \ldots,
+  p_n\) be a list of all primes and let \(n \coloneqq p_{1}p_{2} \cdots p_n +
+  1\). Note that \(n\) is not divisible by \(p_1\) since dividing \(n\) by
+  \(p_1\) gives a remainder of \(1\). Similarly, \(n\) is not divisible by any
+  \(p_k\). Because \(n\) is larger than \(1\), \(n\) is either a prime or a
+  product of primes.
+
+  If \(n\) is a prime, then we have found a prime not in our list, which
+  contradicts the assumption that it was a list of all prime numbers.
+
+  If \(n\) is a product of primes, then it must be divisible by one of the
+  primes in the list. However, we have shown \(n\) is not divisible by any
+  \(p_n\) in the list. Thus the assumption that the list was a list of all
+  prime numbers is again contradicted.
+
+  Since the assumption that there are only finitely many prime numbers has led
+  to a contradiction, there must be infinitely many prime numbers.
+\end{proof}
+
+\section*{Set Theory}
+
+\begin{definition}[Ordered Pair]\label{def:ordered_pair}
+  The ordered pair of two elements \(a\) and \(b\) is the set
+  \[ (a, b) ≔ \{\{a\}, \{a, b\}\}. \]
+\end{definition}
+
+\begin{definition}[Cartesian Product]\label{def:cartesian_product}
+  The Cartesian product of two sets \(A\) and \(B\) is the set
+  \[ A × B ≔ \{\, (a, b) : a ∈ A, b ∈ B \,\}. \]
+\end{definition}
+
+\begin{theorem}
+  For any sets \(A\), \(B\), and \(C\), the following hold:
+  \begin{enumerate}[label=(\alph*)]
+    \item \((A ∪ B) × C = (A × C) ∪ (B × C)\)
+    \item \((A ∩ B) × C = (A × C) ∩ (B × C)\)
+    \item \(A × (B ∪ C) = (A × B) ∪ (A × C)\)
+    \item \(A × (B ∩ C) = (A × B) ∩ (A × C)\).
+  \end{enumerate}
+\end{theorem}
+
+\begin{proof}[Proof of A]
+  Let \((u, v) ∈ (A ∪ B) × C\). Therefore, \(u ∈ A ∪ B\) and \(v ∈ C\). This
+  means that \(u ∈ A\) or \(u ∈ B\). If \(u ∈ A\), then \((u, v) ∈ A × C\). If
+  \(u ∈ B\), then \((u, v) ∈ B × C\). Either way, \((u, v) ∈ (A × C) ∪ (B ×
+  C)\). Hence,
+  \begin{equation*}
+    (A ∪ B) × C ⊆ (A × C) ∪ (B × C).
+  \end{equation*}
+
+  Now, let \(z ≔ (x, y) ∈ (A × C) ∪ (B × C)\). Either \(z ∈ A × C\) or \(z ∈ B
+  × C\). In the first case, \(x ∈ A\) and \(y ∈ C\). In the second, \(x ∈ B\)
+  and \(y ∈ C\), so \(z = (x, y) ∈ (A ∪ B) × C\). This implies that
+  \begin{equation*}
+    (A × C) ∪ (B × C) ⊆ (A ∪ B) × C.
+  \end{equation*}
+
+  Putting the two parts together completes the proof.
+\end{proof}
+
+\begin{proof}[Proof of B]
+  Let \((u, v) ∈ (A ∩ B) × C\). Therefore, \(u ∈ A ∩ B\) and \(v ∈ C\). This
+  means that \(u ∈ A\) and \(u ∈ B\). Thus, \((u, v) ∈ A × C\) and \((u, v) ∈ B
+  × C\), and consequently, \((u, v) ∈ (A × C) ∩ (B × C)\). Hence,
+  \begin{equation*}
+    (A ∩ B) × C ⊆ (A × C) ∩ (B × C).
+  \end{equation*}
+
+  Now, let \(z ≔ (x, y) ∈ (A × C) ∩ (B × C)\).  Therefore, \(z ∈ A × C\) and
+  \(z ∈ B × C\). So, \(x ∈ A\) and \(x ∈ B\), and likewise, \(y ∈ C\). Thus,
+  \(z = (x, y) ∈ (A ∩ B) × C\). This implies that
+  \begin{equation*}
+       (A × C) ∩ (B × C) ⊆ (A ∩ B) × C.
+  \end{equation*}
+
+  Putting the two parts together completes the proof.
+\end{proof}
+
+\section*{Real Analysis}
+
+\begin{definition}[Limit]
+  Let \(f\) be a real-valued function defined on a subset \(D\) of the real
+  numbers. Let \(c\) be a limit point of \(D\) and let \(L\) be a real
+  number. We say that \[ \lim_{x → c} f(x) = L \] if for every
+  \(ε > 0\), there exists a \(δ > 0\) such that, for all
+  \(x ∈ D\), if \(0 < \abs{x - c} < δ\), then
+  \(\abs{f(x) - L} < ε\).
+\end{definition}
+
+\begin{result}
+  \(\displaystyle \lim_{x → 2} (x^{2} + 1) = 5.\)
+\end{result}
+
+\begin{proof}
+  Suppose \(ε > 0\). Let \(δ ≔ \min(1, ε/5)\) and \(x ∈ ℝ\) such that
+  \(0 < \abs{x - 2} < δ\).
+
+  Since \(\abs{x - 2} < δ\), it follows that
+  \begin{equation*}
+  \begin{split}
+    \abs{x - 2} < 1 &⟹ -1 < x - 2 < 1 \\
+                    &⟹ 1 < x < 3.
+  \end{split}
+  \end{equation*}
+  In particular, this means that \(\abs{x + 2} < 5\). Likewise, it follows
+  that \(\abs{x - 2} < ε/5\).
+
+  Hence,
+  \begin{equation*}
+  \begin{split}
+    \abs{x - 2} < δ &⟹ \abs{x - 2} < \frac{ε}{5} \\
+                    &⟹ \abs{x + 2} \abs{x - 2} < 5 ⋅ \frac{ε}{5} \\
+                    &⟹ \abs{x^{2} - 4} < ε \\
+                    &⟹ \abs{(x^{2} + 1) - 5} < ε. \qedhere
+  \end{split}
+  \end{equation*}
+\end{proof}
+
+\begin{result}
+  \(\displaystyle \lim_{x → 3} (x^{2} + 6) = 15\).
+\end{result}
+
+\begin{proof}
+  Suppose \(ε > 0\). Let \(δ ≔ \min(1, ε/7)\) and \(x ∈ ℝ\) such that
+  \(0 < \abs{x - 3} < δ\).
+
+  Since \(\abs{x - 3} < δ\), it follows that
+  \begin{equation*}
+  \begin{split}
+    \abs{x - 3} < 1 &⟹ -1 < x - 3 < 1 \\
+                    &⟹ 2 < x < 4.
+  \end{split}
+  \end{equation*}
+  In particular, this means that \(\abs{x + 3} < 7\). Likewise, it follows
+  that \(\abs{x - 3} < ε/7\).
+
+  Hence,
+  \begin{equation*}
+  \begin{split}
+    \abs{x - 3} < δ &⟹ \abs{x - 3} < \frac{ε}{7} \\
+                    &⟹ \abs{x + 3} \abs{x - 3} < 7 ⋅ \frac{ε}{7} \\
+                    &⟹ \abs{x^{2} - 9} < ε \\
+                    &⟹ \abs{(x^{2} + 6) - 15} < ε. \qedhere
+  \end{split}
+  \end{equation*}
+\end{proof}
+
+\begin{result}
+  \(\displaystyle \lim_{x → 0} \frac{x}{x^{2} + 1} = 0\).
+\end{result}
+
+\begin{proof}
+  Suppose \(ε > 0\). Let \(δ ≔ \min(1, 2ε)\) and \(x ∈ ℝ\) such that
+  \(0 < \abs{x} < δ\).
+
+  Since \(\abs{x} < δ\), it follows that \(\abs{x} < 1\), and thus
+  \(\abs{x^{2} + 1} < 2\). Likewise, it follows that \(\abs{x} < 2ε\).
+
+  Hence,
+  \begin{equation*}
+  \begin{split}
+    \abs{x} < 2ε &⟹ \frac{\abs{x}}{\abs{x^{2} + 1}} < \frac{2ε}{2} \\
+                 &⟹ \frac{\abs{x}}{\abs{x^{2} + 1}} < ε \\
+                 &⟹ \abs*{\frac{x}{x^{2} + 1}} < ε. \qedhere
+  \end{split}
+  \end{equation*}
+\end{proof}
+
+\begin{result}
+  \(\displaystyle \lim_{x → 5^{+}} \frac{1}{x - 5} = ∞\).
+\end{result}
+
+\begin{proof}
+  Suppose \(M > 0\). Let \(δ ≔ 1/M\) and \(x ∈ ℝ\) such that
+  \(0 < x - 5 < δ\).
+
+  Since \(x - 5 < δ\), it follows that
+  \begin{equation*}
+    x - 5 < \frac{1}{M} ⟹ \frac{1}{x - 5} > M. \qedhere
+  \end{equation*}
 \end{proof}
 
 \end{document}

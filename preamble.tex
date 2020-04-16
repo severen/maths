@@ -1,7 +1,7 @@
 %% Common Packages and Configuration
 
-%% Typography and Style %%
-\usepackage{microtype}
+%% Layout and Style %%
+\usepackage{enumitem}
 \usepackage{booktabs}
 \usepackage{xcolor}
 \usepackage{hyperref}
@@ -10,6 +10,10 @@
   urlcolor=blue,
   pdfauthor={Severen Redwood},
 }
+
+%% Typography %%
+\usepackage{fontspec}
+\usepackage{microtype}
 
 %% Maths %%
 \usepackage{mathtools}
@@ -51,13 +55,11 @@
 \newcommand*{\mean}[1]{\overbar{#1}}
 
 % Theorem-style Environments
-\newtheorem*{theorem}{Theorem}
+\newtheorem{theorem}{Theorem}
+\newtheorem{proposition}{Proposition}
+\newtheorem{result}{Result}
 \theoremstyle{definition}
-\newtheorem*{definition}{Definition}
-\newtheorem*{fact}{Fact}
-\newtheorem{nfact}{Fact}
-\newtheorem*{example}{Example}
-\newtheorem{nexample}{Example}
+\newtheorem{definition}{Definition}
 
 %% Language %%
 \usepackage{csquotes}
