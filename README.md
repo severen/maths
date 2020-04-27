@@ -1,14 +1,10 @@
-# Mathematics Notes and Proofs
+# Mathematics!
 
-This repository contains various references and proofs I have made to assist
-with learning mathematics. Essentially, I want to make sure that I fully
-understand what I have learnt by making a reference for every topic, as well as
-the occasional proof. This additionally makes it harder to forget things, which
-is a plus.
+This repository contains various mathematical documents and notes that I have
+written, such as random proofs and solutions to problems/exercises in books.
 
-The mathematics in this repository should mostly (if not only) consist of
-topics typically covered in secondary school and undergraduate university
-courses.
+The mathematics in this repository mostly consists, so far, of topics typically
+covered in undergraduate university courses.
 
 ## Compiling
 
