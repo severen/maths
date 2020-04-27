@@ -1,21 +1,17 @@
 \documentclass[headings=standardclasses]{scrartcl}
 
 \input{../preamble.tex}
-
-% Add horizontal rules under top-level section headings.
-\makeatletter
-\renewcommand{\sectionlinesformat}[4]{
-  \ifstr{#1}{section}{
-    \parbox[t]{\linewidth}{
-      \@hangfrom{\hskip #2#3}{#4}\par
-      \kern-0.9\ht\strutbox \rule{\linewidth}{0.6pt}
-    }%
-  }{\@hangfrom{\hskip #2#3}{#4}}
-}
-\makeatother
+\input{../rules.tex}
 
 \setmainfont{TeX Gyre Pagella}
 \setmathfont{TeX Gyre Pagella Math}
+
+% Theorem-style Environments
+\newtheorem{theorem}{Theorem}
+\newtheorem{proposition}{Proposition}
+\newtheorem{result}{Result}
+\theoremstyle{definition}
+\newtheorem{definition}{Definition}
 
 % PDF Metadata
 \hypersetup{

@@ -1,0 +1,11 @@
+% Place horizontal rules under top-level section headings.
+\makeatletter
+\renewcommand{\sectionlinesformat}[4]{
+  \ifstr{#1}{section}{
+    \parbox[t]{\linewidth}{
+      \@hangfrom{\hskip #2#3}{#4}\par
+      \kern-0.9\ht\strutbox \rule{\linewidth}{0.6pt}
+    }%
+  }{\@hangfrom{\hskip #2#3}{#4}}
+}
+\makeatother

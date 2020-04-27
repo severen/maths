@@ -1,0 +1,302 @@
+\documentclass[headings=standardclasses]{scrartcl}
+
+\input{../../preamble.tex}
+\input{../../rules.tex}
+
+% Label lists with ([a..z]) in accordance with the book.
+\setlist{label=(\alph*)}
+
+% Theorem-style Environments
+\newtheorem*{theorem}{Theorem}
+\newtheorem*{conjecture}{Conjecture}
+\theoremstyle{definition}
+\newtheorem{exercise}{Exercise}[subsection]
+\newenvironment{solution}{\begin{proof}[Solution]}{\end{proof}}
+
+% Only display the subsection numbering for the exercise environment.
+% e.g. 1.3.6 => 6
+\renewcommand{\theexercise}{\arabic{exercise}}
+
+% PDF Metadata
+\hypersetup{
+  pdftitle={Solutions to Exercises in How to Prove It (Third Edition)}
+}
+
+\title{Solutions to Exercises in\\ \emph{How to Prove It}\\ by Daniel J. Velleman}
+\subtitle{Third Edition}
+\author{Severen Redwood}
+\date{}
+
+\begin{document}
+
+\maketitle
+
+\tableofcontents
+
+\section*{Introduction}
+\addcontentsline{toc}{section}{Introduction}
+
+\begin{exercise}~ % Very special space for creating a newline!
+  \begin{enumerate}
+    \item Factor \(2^{15} - 1 = 32,767\) into a product of two smaller positive
+          integers.
+    \item Find an integer \(x\) such that \(1 < x < 2^{32,767} - 1\) and
+          \(2^{32,767} - 1\) is divisible by \(x\).
+  \end{enumerate}
+\end{exercise}
+
+\begin{solution}
+  The proof of Theorem 1 shows that \(2^n - 1 = xy\), where \(x ≔ 2^{b} - 1\)
+  and \(y ≔ 1 + 2^b + 2^{2b} + ⋯ + 2^{(a - 1)b}\), and that \(2^{n} - 1 =
+  2^{ab} - 1\), which implies \(n = ab\).
+
+  \begin{enumerate}
+    \item If \(n = 15 = 3 \cdot 5\), we can take \(a = 3\) and \(b = 5\).
+          Therefore, \(x = 2^5 - 1 = 31\) and \(y = 1 + 2^5 + 2^{2 ⋅ 5} =
+          1057\), and thus \(2^{15} - 1 = 31 ⋅ 1057 = 32,767\).
+    \item If \(n = 32,767 = 7 \cdot 4,681\), we can take \(b = 7\). Therefore,
+          \(x = 2^7 - 1 = 127\), which is clearly a divisor of \(2^{32,767} -
+          1\) and necessarily less than \(2^{32,767} - 1\). \qedhere
+  \end{enumerate}
+\end{solution}
+
+\begin{exercise}
+  Make some conjectures about the values of \(n\) for which \(3^n − 1\) is
+  prime or the values of \(n\) for which \(3^n − 2^n\) is prime.
+\end{exercise}
+
+\begin{solution}
+  By looking at \autoref{table:conjecture_1}, we can make the following
+  conjecture about \(3^n - 1\):
+
+  \begin{conjecture}
+    If \(n\) is an integer greater than or equal to \(1\), then \(3^n - 1\) is
+    even.
+  \end{conjecture}
+
+  By looking at \autoref{table:conjecture_2}, we can make the following two
+  conjectures about \(3^n - 2^n\):
+
+  \begin{conjecture}
+    If \(n\) is an integer greater than \(1\) and is prime, then \(3^n - 2^n\)
+    is prime.
+  \end{conjecture}
+
+  \begin{conjecture}
+    If \(n\) is an integer greater than \(1\) and is not prime, then \(3^n -
+    2^n\) is not prime. \qedhere
+  \end{conjecture}
+
+  \begin{table}[H]
+    \centering
+    \begin{tabular}{rlrl}
+      \toprule
+      \(n\) & Is \(n\) prime? & \(3^n - 1\) & Is \(3^n - 1\) prime? \\
+      \midrule
+      1 & no & 2 & yes \\
+      2 & yes & 8 & no \\
+      3 & yes & 26 & no \\
+      4 & no & 80 & no \\
+      5 & yes & 242 & no \\
+      6 & no & 728 & no \\
+      7 & yes & 2186 & no \\
+      8 & no & 6560 & no \\
+      9 & no & 19682 & no \\
+      10 & no & 59048 & no \\
+      \bottomrule
+    \end{tabular}
+    \caption{Values of \(3^n - 1\).}\label{table:conjecture_1}
+  \end{table}
+
+  \begin{table}[H]
+    \centering
+    \begin{tabular}{rlrl}
+      \toprule
+      \(n\) & Is \(n\) prime? & \(3^n - 2^n\) & Is \(3^n - 2^n\) prime? \\
+      \midrule
+      1 & no & 1 & no \\
+      2 & yes & 5 & yes \\
+      3 & yes & 19 & yes \\
+      4 & no & 65 & no \\
+      5 & yes & 211 & yes \\
+      6 & no & 665 & no \\
+      7 & yes & 2059 & yes \\
+      8 & no & 6305 & no \\
+      9 & no & 19171 & no \\
+      10 & no & 58025 & no \\
+      \bottomrule
+    \end{tabular}
+    \caption{Values of \(3^n - 2^n\).}\label{table:conjecture_2}
+  \end{table}
+\end{solution}
+
+\section{Sentential Logic}
+
+\subsection{Deductive Reasoning and Logical Connectives}
+
+\begin{exercise}
+  Analyse the logical forms of the following statements:
+  \begin{enumerate}
+      \item We'll have either a reading assignment or homework problems, but we
+            won't have both homework problems and a test.
+      \item You won't go skiing, or you will and there won't be any snow.
+      \item \(\sqrt{7} ≰  2\).
+  \end{enumerate}
+\end{exercise}
+
+\begin{solution}
+  The logical forms are:
+  \begin{enumerate}
+    \item \((R \lor H) \land \lnot (H \land T)\), where \(R\) stands for
+          \enquote{we will have a reading assignment}, \(H\) for \enquote{we
+          will have homework problems}, and \(T\) for \enquote{we will have a
+          test}.
+    \item \(\lnot G \lor (G \land \lnot S)\), where \(G\) stands for
+          \enquote{you will go skiing} and \(S\) for \enquote{there will be
+          snow}.
+    \item \(\lnot ((\sqrt{7} < 2) \lor (\sqrt{7} = 2))\). \qedhere
+  \end{enumerate}
+\end{solution}
+
+\begin{exercise}
+  Analyse the logical forms of the following statements:
+  \begin{enumerate}
+    \item Either John and Bill are both telling the truth, or neither of them
+          is.
+    \item I'll have either fish or chicken, but I won't have both fish and
+          mashed potatoes.
+    \item \(3\) is a common divisor of \(6\), \(9\), and \(15\).
+  \end{enumerate}
+\end{exercise}
+
+\begin{solution}
+  The logical forms are:
+  \begin{enumerate}
+    \item \((J \land B) \lor \lnot (A \lor B)\), where \(J\) stands for
+          \enquote{John is telling the truth} and \(B\) for \enquote{Bill is
+          telling the truth}.
+    \item \((F \lor C) \land \lnot (F \land M)\), where \(F\) stands for
+          \enquote{I will have fish}, \(C\) for \enquote{I will have chicken},
+          and \(M\) for \enquote{I will have mashed potatoes}.
+    \item \(A \land B \land C\), where \(A\) stands for \enquote{3 divides 6},
+          \(B\) for \enquote{3 divides 9}, and \(C\) for \enquote{3 divides
+          15}. \qedhere
+  \end{enumerate}
+\end{solution}
+
+\begin{exercise}
+  Analyse the logical forms of the following statements:
+  \begin{enumerate}
+    \item Alice and Bob are not both in the room.
+    \item Alice and Bob are both not in the room.
+    \item Either Alice or Bob is not in the room.
+    \item Neither Alice nor Bob is in the room.
+  \end{enumerate}
+\end{exercise}
+
+\begin{solution}
+  Let \(A\) stand for \enquote{Alice is in the room} and \(B\) for \enquote{Bob
+  is in the room}. Then, the logical forms are:
+  \begin{enumerate}
+    \item \(\lnot (A \land B)\).
+    \item \(\lnot A \land \lnot B\).
+    \item \(\lnot A \lor \lnot B\).
+    \item \(\lnot A \land \lnot B\). \qedhere
+  \end{enumerate}
+\end{solution}
+
+\subsection{Truth Tables}
+
+\begin{exercise}
+  Make truth tables for the following formulae:
+  \begin{enumerate}
+    \item \(\lnot P \lor Q\).
+    \item \((S \lor G) \land (\lnot S \lor \lnot G)\).
+  \end{enumerate}
+\end{exercise}
+
+\begin{solution}
+  The truth tables are:
+  \begin{enumerate}
+    \item
+      \begin{tabular}[b]{ccc}
+        \toprule
+        \(P\) & \(Q\) & \(\lnot P \lor Q\) \\
+        \midrule
+        T & T & T \\
+        T & F & F \\
+        F & F & T \\
+        F & T & T \\
+        \bottomrule
+      \end{tabular}
+    \item
+      \begin{tabular}[b]{ccc}
+        \toprule
+        \(S\) & \(G\) & \((S \lor G) \land (\lnot S \lor \lnot G)\) \\
+        \midrule
+        T & T & T \\
+        T & F & F \\
+        \bottomrule
+      \end{tabular} \qedhere
+  \end{enumerate}
+\end{solution}
+
+\section{Quantificational Logic}
+
+\subsection{Quantifiers}
+
+\begin{exercise}
+  Analyse the logical forms of the following statements:
+  \begin{enumerate}
+    \item Anyone who has forgiven at least one person is a saint.
+    \item Nobody in the calculus class is smarter than everybody in the
+          discrete maths class.
+    \item Everyone likes Mary, except Mary herself.
+    \item Jane saw a police officer, and Roger saw one too.
+    \item Jane saw a police officer, and Roger saw him too.
+  \end{enumerate}
+\end{exercise}
+
+\begin{solution}
+  The logical forms are:
+  \begin{enumerate}
+    \item Todo.
+    \item Todo.
+    \item Todo.
+    \item Todo.
+    \item Todo. \qedhere
+  \end{enumerate}
+\end{solution}
+
+\section{Proofs}
+
+\subsection{Proof Strategies}
+
+\begin{exercise}
+  Consider the following theorem. (This theorem was proved in the
+  introduction.)
+
+  \begin{theorem}
+    Suppose \(n\) is an integer larger than \(1\) and \(n\) is not prime. Then
+    \(2^n - 1\) is not prime.
+  \end{theorem}
+
+  \begin{enumerate}
+    \item Identify the hypotheses and conclusion of the theorem. Are the
+          hypotheses true when \(n = 6\)? What does the theorem tell you in
+          this instance? Is it right?
+    \item What can you conclude from the theorem in the case \(n = 15\)? Check
+          directly that this conclusion is correct.
+    \item What can you conclude from the theorem in the case \(n = 11\)?
+  \end{enumerate}
+\end{exercise}
+
+\begin{solution}~
+  \begin{enumerate}
+    \item Todo.
+    \item Todo.
+    \item Todo. \qedhere
+  \end{enumerate}
+\end{solution}
+
+\end{document}
