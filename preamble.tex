@@ -22,27 +22,30 @@
 \usepackage[free-standing-units]{siunitx}
 \usepackage{unicode-math}
 
-% Paired Delimiter Commands
+% General
 \DeclarePairedDelimiter{\card}{\lvert}{\rvert}
 \DeclarePairedDelimiter{\abs}{\lvert}{\rvert}
 \DeclarePairedDelimiter{\norm}{\lVert}{\rVert}
 \DeclarePairedDelimiter{\ceil}{\lceil}{\rceil}
 \DeclarePairedDelimiter{\floor}{\lfloor}{\rfloor}
 
+\newcommand*{\conj}[1]{\overbar{#1}}
+
 % Combinatorics
 \newcommand*{\perm}[2]{\prescript{#1}{}P_{#2}}
 \newcommand*{\comb}[2]{\prescript{#1}{}C_{#2}}
 
-% Differential Calculus
+% Calculus
 \DeclareMathOperator{\dif}{d\!}
 \newcommand*{\od}[3][]{\frac{\dif{^{#1}}#2}{\dif{#3^{#1}}}}
 \newcommand*{\pd}[3][]{\frac{\partial{^{#1}}#2}{\partial{#3^{#1}}}}
 
-% Complex Conjugates
-\newcommand*{\conj}[1]{\overbar{#1}}
-
 % Linear Algebra
-% Hack support for augmented matrices into the matrix commands.
+\newcommand*{\uvec}[1]{\hat{#1}}
+\newcommand*{\ihat}{\uvec{\imath}}
+\newcommand*{\jhat}{\uvec{\jmath}}
+
+% Hack in support for augmented matrices into the matrix commands.
 \makeatletter
 \renewcommand*{\env@matrix}[1][*\c@MaxMatrixCols c]{
   \hskip -\arraycolsep
