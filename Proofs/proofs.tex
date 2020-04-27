@@ -135,7 +135,7 @@ that I \textit{hope} are correct.
 \end{theorem}
 
 \begin{proof}
-  Let \(c \coloneqq \log_b(a)\). From the definition of a logarithm, it follows
+  Let \(c ≔ \log_b(a)\). From the definition of a logarithm, it follows
   that \(b^c = a\). By taking the base-\(x\) logarithm of both sides,
   \begin{equation*}
       \log_x(b^c) = \log_x(a).
@@ -183,19 +183,19 @@ that I \textit{hope} are correct.
 
 \begin{proof}
   Suppose there are only finitely many prime numbers. Let \(p_1, p_2, \ldots,
-  p_n\) be a list of all primes and let \(n \coloneqq p_{1}p_{2} \cdots p_n +
-  1\). Note that \(n\) is not divisible by \(p_1\) since dividing \(n\) by
-  \(p_1\) gives a remainder of \(1\). Similarly, \(n\) is not divisible by any
-  \(p_k\). Because \(n\) is larger than \(1\), \(n\) is either a prime or a
+  p_n\) be a list of all primes and let \(m ≔ p_{1}p_{2} \cdots p_n + 1\). Note
+  that \(m\) is not divisible by \(p_1\) since dividing \(m\) by \(p_1\) gives
+  a remainder of \(1\). Similarly, \(m\) is not divisible by any other number
+  in the list. Because \(m\) is larger than \(1\), \(m\) is either a prime or a
   product of primes.
 
-  If \(n\) is a prime, then we have found a prime not in our list, which
+  If \(m\) is a prime, then we have found a prime not in our list, which
   contradicts the assumption that it was a list of all prime numbers.
 
-  If \(n\) is a product of primes, then it must be divisible by one of the
-  primes in the list. However, we have shown \(n\) is not divisible by any
-  \(p_n\) in the list. Thus the assumption that the list was a list of all
-  prime numbers is again contradicted.
+  If \(m\) is a product of primes, then it must be divisible by one of the
+  primes in our list. However, we have shown \(m\) is not divisible by any
+  number in the list. Thus the assumption that the list was a list of all prime
+  numbers is again contradicted.
 
   Since the assumption that there are only finitely many prime numbers has led
   to a contradiction, there must be infinitely many prime numbers.
