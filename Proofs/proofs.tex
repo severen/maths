@@ -3,8 +3,15 @@
 \input{../preamble.tex}
 \input{../rules.tex}
 
+\usepackage{xpatch}
+
 \setmainfont{TeX Gyre Pagella}
 \setmathfont{TeX Gyre Pagella Math}
+
+% Reset theorem counters after unnumbered sections too.
+\makeatletter
+\xpretocmd{\@xthm}{\xpretocmd{\section}{\setcounter{#1}{0}}{}{}}{}{}
+\makeatother
 
 % Theorem-style Environments
 \newtheorem{theorem}{Theorem}
