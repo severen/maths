@@ -245,6 +245,43 @@ that I \textit{hope} are correct.
   all natural numbers by the principle of mathematical induction.
 \end{proof}
 
+\begin{theorem}
+  The sum of the squares of the first \(n\) natural numbers is equal to
+  \[ \frac{n(n + 1)(2n + 1)}{6}. \]
+\end{theorem}
+
+\begin{proof}
+  We proceed by induction. If \(n = 1\), then the theorem is clearly true:
+  \begin{equation*}
+    ∑_{i = 1}^1 i^2 = \frac{1(1 + 1)(2 ⋅1 + 1)}{6} = 1.
+  \end{equation*}
+  So, the theorem holds for the base case of \(n = 1\).
+
+  For the inductive hypothesis, assume the formula is true for all \(k > 1\).
+  Hence,
+  \begin{equation*}
+    ∑_{i = 1}^k i = \frac{k(k + 1)(2k + 1)}{6}.
+  \end{equation*}
+
+  For the inductive step, let \(n = k + 1\). By the properties of summation,
+  \begin{equation*}
+    ∑_{i = 1}^{k + 1} i^2 = ∑_{i = 1}^k i^2 + {(k + 1)}^2.
+  \end{equation*}
+  By using the inductive hypothesis,
+  \begin{equation*}
+  \begin{split}
+    ∑_{i = 1}^k i^2 + {(k + 1)}^2 &= \frac{k(k + 1)(2k + 1)}{6} + (k + 1) \\
+                                  &= \frac{k(k + 1)(2k + 1) + 6(k + 1)}{6} \\
+                                  &= \frac{(k + 1)(k + 2)(2k + 3)}{6} \\
+                                  &= \frac{(k + 1)((k + 1) + 1)(2(k + 1) + 1)}{6}.
+  \end{split}
+  \end{equation*}
+  So, the theorem holds when \(n = k + 1\).
+
+  Since the base case and inductive step have been shown, the theorem holds for
+  all natural numbers by the principle of mathematical induction.
+\end{proof}
+
 \section*{Set Theory}
 
 \begin{definition}[Ordered Pair]\label{def:ordered_pair}
