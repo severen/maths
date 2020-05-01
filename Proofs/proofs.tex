@@ -217,9 +217,10 @@ that I \textit{hope} are correct.
 \begin{proof}
   Without loss of generality, assume that \(p < q\). Note that \(p\) and \(q\)
   are both odd integers since they are both prime numbers greater than \(2\).
-  Therefore, \(p + q = 2a\), for some integer \(a\). It cannot be that \(a\) is
-  prime since \(a = (p + q)/2\), which is a contradiction. Hence, \(a\) must be
-  composite, and so the theorem holds.
+  Therefore, \(p + q = 2a\), for some integer \(a\). If \(a\) is prime, then
+  \(p < a < q\) since \(a = (p + q)/2\). However, because \(p\) and \(q\) are
+  consecutive primes, \(a\) cannot also be prime. Hence, \(a\) must be
+  composite, and so the result follows.
 \end{proof}
 
 \begin{theorem}
