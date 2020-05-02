@@ -366,6 +366,37 @@ that I \textit{hope} are correct.
   - L} < ε. \]
 \end{definition}
 
+\begin{definition}[Partition of an Interval]
+  A partition of a closed interval \([a, b]\) is a set of points \(P = \{x_0,
+  x_1, \ldots, x_n\}\) satisfying the condition that \(a = x_0 < x_1 < \cdots <
+  x_{n - 1} < x_n = b\).
+\end{definition}
+
+\begin{definition}[Norm of a Partition]
+  The norm (or mesh) of a partition \(P = \{x_0, x_1, \ldots, x_n\}\) is the
+  length of the longest subinterval of \(P\) and is denoted by \(\norm{P} =
+  \max{\{ x_i - x_{i - 1} \}}_{i = 1}^n\).
+\end{definition}
+
+\begin{definition}[Riemann Sum]
+  Let \(f\) be a function defined on a closed interval \(I\), and let \(P =
+  \{x_0, x_1, \ldots, x_n\}\) be a partition of \(I\). A Riemann sum of \(f\)
+  over \(I\) with partition \(P\) is defined as \[ ∑_{i = 1}^n f(x^*_i) Δx_i,
+  \] where \(Δx_i = x_i - x_{i - 1}\) and \(x^*_i ∈ [x_{i - 1}, x_i]\).
+\end{definition}
+
+\begin{definition}[Definite Integral]
+  Let \(f\) be a function defined on a closed interval \(I\), and let \(J\) be
+  a real number. We say that \[ ∫_a^b f(x) \dif x = J, \] and that \(J\) is the
+  limit of the Riemann sums \(∑_{i = 1}^n f(x^*_i) Δx_i\) if the following
+  condition is satisfied:
+
+  Given any \(ε > 0\), there is a corresponding \(ε > 0\) such that, for every
+  partition \(P = \{x_0, x_1, \ldots, x_n\}\) of \(I\) with \(\norm{P} < δ\)
+  and any sample point \(x^*_i ∈ [x_{i - 1}, x_i]\), we have that \[ \abs*{∑_{i
+  = 1}^n f(x^*_i) Δx_i - J} < ε. \]
+\end{definition}
+
 \begin{result}
   \(\displaystyle \lim_{x → 2} (x^{2} + 1) = 5.\)
 \end{result}
@@ -457,6 +488,26 @@ that I \textit{hope} are correct.
   \begin{equation*}
     x - 5 < \frac{1}{M} ⟹ \frac{1}{x - 5} > M. \qedhere
   \end{equation*}
+\end{proof}
+
+\begin{theorem}[Constant Multiple of Definite Integrals]
+  If \(f\) is a integrable function, then \[ ∫_a^b kf(x) \dif x = k∫_a^b f(x)
+  \dif x, \] for some constant \(k\).
+\end{theorem}
+
+\begin{proof}
+  From the definition of a definite integral, we have that
+  \begin{equation*}
+      ∫_a^b kf(x) \dif x = \lim_{\norm{P} → 0} ∑_{i = 1}^n kf(x^*_i) Δx_i.
+  \end{equation*}
+  By the properties of limits and summation,
+  \begin{equation*}
+  \begin{split}
+      \lim_{\norm{P} → 0} ∑_{i = 1}^n kf(x^*_i) Δx_i &= k\lim_{\norm{P} → 0} ∑_{i = 1}^n f(x^*_i) Δx_i \\
+      &= k∫_a^b f(x) \dif x,
+  \end{split}
+  \end{equation*}
+  as desired.
 \end{proof}
 
 \end{document}
