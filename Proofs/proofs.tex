@@ -8,17 +8,19 @@
 \setmainfont{TeX Gyre Pagella}
 \setmathfont{TeX Gyre Pagella Math}
 
-% Reset theorem counters after unnumbered sections too.
-\makeatletter
-\xpretocmd{\@xthm}{\xpretocmd{\section}{\setcounter{#1}{0}}{}{}}{}{}
-\makeatother
-
 % Theorem-style Environments
-\newtheorem{theorem}{Theorem}
-\newtheorem{proposition}{Proposition}
-\newtheorem{result}{Result}
+\newtheorem{theorem}{Theorem}[subsection]
+\newtheorem{proposition}{Proposition}[subsection]
+\newtheorem{result}{Result}[subsection]
 \theoremstyle{definition}
-\newtheorem{definition}{Definition}
+\newtheorem{definition}{Definition}[subsection]
+
+% Only display the subsection numbering for the theorem environments.
+% e.g. 1.3.6 => 6
+\renewcommand{\thetheorem}{\arabic{theorem}}
+\renewcommand{\theproposition}{\arabic{proposition}}
+\renewcommand{\theresult}{\arabic{result}}
+\renewcommand{\thedefinition}{\arabic{definition}}
 
 % PDF Metadata
 \hypersetup{
@@ -39,7 +41,9 @@ Riemann hypothesis here, or indeed anything else that is original. Instead, you
 will find a range of proofs related to mostly standard undergraduate material
 that I \textit{hope} are correct.
 
-\section*{Algebra}
+\tableofcontents
+
+\section{Algebra}
 
 \begin{theorem}[Quadratic Formula]
   The solutions of the quadratic equation of the form \(ax^2 + bx + c = 0\) are
@@ -155,7 +159,7 @@ that I \textit{hope} are correct.
   which is the change of base formula.
 \end{proof}
 
-\section*{Number Theory}
+\section{Number Theory}
 
 \begin{definition}[Natural Number]
   A natural number is a member of the set \(ℕ = ℤ^{+} = \{1, 2, 3, \ldots\}\).
@@ -297,7 +301,7 @@ that I \textit{hope} are correct.
   all natural numbers by the principle of mathematical induction.
 \end{proof}
 
-\section*{Set Theory}
+\section{Set Theory}
 
 \begin{definition}[Ordered Pair]\label{def:ordered_pair}
   The ordered pair of two elements \(a\) and \(b\) is the set
@@ -356,7 +360,9 @@ that I \textit{hope} are correct.
   Putting the two parts together completes the proof.
 \end{proof}
 
-\section*{Real Analysis}
+\section{Real Analysis}
+
+\subsection{Limits}
 
 \begin{definition}[Limit]
   Let \(f\) be a real-valued function defined on a subset \(D\) of the real
@@ -364,37 +370,6 @@ that I \textit{hope} are correct.
   We say that \[ \lim_{x → c} f(x) = L \] if for every \(ε > 0\), there exists
   a \(δ > 0\) such that, for all \(x ∈ D\), \[ 0 < \abs{x - c} < δ ⟹ \abs{f(x)
   - L} < ε. \]
-\end{definition}
-
-\begin{definition}[Partition of an Interval]
-  A partition of a closed interval \([a, b]\) is a set of points \(P = \{x_0,
-  x_1, \ldots, x_n\}\) satisfying the condition that \(a = x_0 < x_1 < \cdots <
-  x_{n - 1} < x_n = b\).
-\end{definition}
-
-\begin{definition}[Norm of a Partition]
-  The norm (or mesh) of a partition \(P = \{x_0, x_1, \ldots, x_n\}\) is the
-  length of the longest subinterval of \(P\) and is denoted by \(\norm{P} =
-  \max{\{ x_i - x_{i - 1} \}}_{i = 1}^n\).
-\end{definition}
-
-\begin{definition}[Riemann Sum]
-  Let \(f\) be a function defined on a closed interval \(I\), and let \(P =
-  \{x_0, x_1, \ldots, x_n\}\) be a partition of \(I\). A Riemann sum of \(f\)
-  over \(I\) with partition \(P\) is defined as \[ ∑_{i = 1}^n f(x^*_i) Δx_i,
-  \] where \(Δx_i = x_i - x_{i - 1}\) and \(x^*_i ∈ [x_{i - 1}, x_i]\).
-\end{definition}
-
-\begin{definition}[Definite Integral]
-  Let \(f\) be a function defined on a closed interval \(I\), and let \(J\) be
-  a real number. We say that \[ ∫_a^b f(x) \dif x = J, \] and that \(J\) is the
-  limit of the Riemann sums \(∑_{i = 1}^n f(x^*_i) Δx_i\) if the following
-  condition is satisfied:
-
-  Given any \(ε > 0\), there is a corresponding \(ε > 0\) such that, for every
-  partition \(P = \{x_0, x_1, \ldots, x_n\}\) of \(I\) with \(\norm{P} < δ\)
-  and any sample point \(x^*_i ∈ [x_{i - 1}, x_i]\), we have that \[ \abs*{∑_{i
-  = 1}^n f(x^*_i) Δx_i - J} < ε. \]
 \end{definition}
 
 \begin{result}
@@ -489,6 +464,39 @@ that I \textit{hope} are correct.
     x - 5 < \frac{1}{M} ⟹ \frac{1}{x - 5} > M. \qedhere
   \end{equation*}
 \end{proof}
+
+\subsection{Integration}
+
+\begin{definition}[Partition of an Interval]
+  A partition of a closed interval \([a, b]\) is a set of points \(P = \{x_0,
+  x_1, \ldots, x_n\}\) satisfying the condition that \(a = x_0 < x_1 < \cdots <
+  x_{n - 1} < x_n = b\).
+\end{definition}
+
+\begin{definition}[Norm of a Partition]
+  The norm (or mesh) of a partition \(P = \{x_0, x_1, \ldots, x_n\}\) is the
+  length of the longest subinterval of \(P\) and is denoted by \(\norm{P} =
+  \max{\{ x_i - x_{i - 1} \}}_{i = 1}^n\).
+\end{definition}
+
+\begin{definition}[Riemann Sum]
+  Let \(f\) be a function defined on a closed interval \(I\), and let \(P =
+  \{x_0, x_1, \ldots, x_n\}\) be a partition of \(I\). A Riemann sum of \(f\)
+  over \(I\) with partition \(P\) is defined as \[ ∑_{i = 1}^n f(x^*_i) Δx_i,
+  \] where \(Δx_i = x_i - x_{i - 1}\) and \(x^*_i ∈ [x_{i - 1}, x_i]\).
+\end{definition}
+
+\begin{definition}[Definite Integral]
+  Let \(f\) be a function defined on a closed interval \(I\), and let \(J\) be
+  a real number. We say that \[ ∫_a^b f(x) \dif x = J, \] and that \(J\) is the
+  limit of the Riemann sums \(∑_{i = 1}^n f(x^*_i) Δx_i\) if the following
+  condition is satisfied:
+
+  Given any \(ε > 0\), there is a corresponding \(ε > 0\) such that, for every
+  partition \(P = \{x_0, x_1, \ldots, x_n\}\) of \(I\) with \(\norm{P} < δ\)
+  and any sample point \(x^*_i ∈ [x_{i - 1}, x_i]\), we have that \[ \abs*{∑_{i
+  = 1}^n f(x^*_i) Δx_i - J} < ε. \]
+\end{definition}
 
 \begin{theorem}[Constant Multiple of Definite Integrals]
   If \(f\) is a integrable function, then \[ ∫_a^b kf(x) \dif x = k∫_a^b f(x)
