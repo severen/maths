@@ -463,6 +463,62 @@ that I \textit{hope} are correct.
   \end{equation*}
 \end{proof}
 
+\subsection{Differentiation}
+
+\begin{definition}[Derivative]
+  The derivative of a function \(f\) with respect to a variable \(x\) is the
+  function \(f'\) whose value at \(x\) is
+  \[ f'(x) = \lim_{h → 0} \frac{f(x + h) - f(x)}{h}, \]
+  provided that the limit exists.
+\end{definition}
+
+\begin{theorem}
+  If \(f\) is a differentiable function, then
+  \[ (kf(x))' = kf'(x), \]
+  for some constant \(k\).
+\end{theorem}
+
+\begin{proof}
+  From the definition of a derivative,
+  \begin{equation*}
+  \begin{split}
+    (kf(x))' &= \lim_{h → 0} \frac{kf(x + h) - kf(x)}{h} \\
+             &= \lim_{h → 0} \frac{k(f(x + h) - f(x))}{h}.
+  \end{split}
+  \end{equation*}
+  By the properties of limits,
+  \begin{equation*}
+  \begin{split}
+    \lim_{h → 0} \frac{k(f(x + h) - f(x))}{h} &= k\lim_{h → 0} \frac{f(x + h) - f(x)}{h} \\
+                                              &= kf'(x),
+  \end{split}
+  \end{equation*}
+  as desired.
+\end{proof}
+
+\begin{theorem}
+  If \(f\) and \(g\) are differentiable functions, then
+  \[ (f(x) + g(x))' = f'(x) + g'(x). \]
+\end{theorem}
+
+\begin{proof}
+  From the definition of the derivative,
+  \begin{equation*}
+  \begin{split}
+    (f(x) + g(x))' &= \lim_{h → 0} \frac{(f(x + h) + g(x + h)) - (f(x) + g(x))}{h} \\
+                   &= \lim_{h → 0} \left(\frac{f(x + h) - f(x)}{h} + \frac{g(x + h) - g(x)}{h}\right).
+  \end{split}
+  \end{equation*}
+  By the properties of limits,
+  \begin{equation*}
+  \begin{split}
+    \lim_{h → 0} \left(\frac{f(x + h) - f(x)}{h} + \frac{g(x + h) - g(x)}{h}\right) &= \lim_{h → 0} \frac{f(x + h) - f(x)}{h} + \lim_{h → 0} \frac{g(x + h) - g(x)}{h} \\
+                                                                                    &= f'(x) + g'(x),
+  \end{split}
+  \end{equation*}
+  as desired.
+\end{proof}
+
 \subsection{Integration}
 
 \begin{definition}[Partition of an Interval]
