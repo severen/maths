@@ -463,6 +463,66 @@ that I \textit{hope} are correct.
   \end{equation*}
 \end{proof}
 
+\subsection{Sequences and Series}
+
+\begin{definition}[Sequence]
+  A sequence is a function \(f : X → Y\), where \(X ⊆ ℕ\).
+
+  It is customary to denote a sequence by a letter such as \enquote{\(a\)}.
+  Then, for each \(n ∈ X\), \(f(n)\) is denoted by \(a_n\), and \(f\) itself is
+  denoted by \({(a_n)}_{n ∈ X}\).
+\end{definition}
+
+\begin{definition}[Convergent Sequence]
+  A sequence \((a_n)\) converges to the limit \(L\) if, for every \(ε > 0\),
+  there exists an \(N\) such that, for all \(n\),
+  \begin{equation*}
+    n > N ⟹ \abs{a_n - L} < ε.
+  \end{equation*}
+  If this condition is met, we write \(\lim_{x → ∞} a_n = L\), or simply \(a_n
+  → L\). Otherwise, we say that \((a_n)\) diverges.
+\end{definition}
+
+\begin{theorem}[Squeeze Theorem]
+  Let \((a_n)\), \((b_n)\), and \((c_n)\) be sequences of real numbers. If
+  \(b_n ⩽ a_n ⩽ c_n\) for all \(n > N\), and \(\lim_{n → ∞} b_n = \lim_{n → ∞}
+  c_n = L\), then \(\lim_{n → ∞} a_n = L\).
+\end{theorem}
+
+\begin{proof}
+  Let \(ε > 0\) be given. By hypothesis, there exists an \(N_1\) such that
+  \(\abs{b_n - L} < ε\) for all \(n > N_1\), and an \(N_2\) such that
+  \(\abs{c_n - L} < ε\) for all \(n > N_2\). Hence, let \(N' ≔ \max\{N, N_1,
+  N_2\}\). If \(n > N'\), then
+  \begin{equation*}
+  \begin{split}
+    b_n - L ⩽ a_n - L ⩽ c_n - L &⟹ -ε < a_n - L < ε \\
+                                &= \abs{a_n - L} < ε.
+  \end{split}
+  \end{equation*}
+  Since the choice of \(ε\) is arbitrary, \(\lim_{n → ∞} a_n = L\).
+  \end{proof}
+
+\begin{theorem}
+  Let \((a_n)\) be a sequence of real numbers. If \(\lim_{n → ∞} a_n = L\), and
+  \(f\) is a function that is continuous at \(L\) and defined for all \(a_n\),
+  then \(\lim_{n → ∞} f(a_n) = f(L)\).
+\end{theorem}
+
+\begin{proof}
+  Let \(ε > 0\) be given. Since \(f\) is continuous at \(L\), there exists a
+  \(δ > 0\) such that, for all \(x\) in the domain of \(f\),
+  \begin{equation*}
+    \abs{x - L} < δ ⟹ \abs{f(x) - f(L)} < ε.
+  \end{equation*}
+  Likewise, since \(\lim_{n → ∞} a_n = L\), there exists an \(N\) such that
+  \(\abs{a_n - L} < δ\) for all \(n > N\). Hence, when \(x = a_n\),
+  \begin{equation*}
+    n > N ⟹ \abs{f(a_n) - f(L)} < ε.
+  \end{equation*}
+  Since the choice of \(ε\) is arbitrary, \(\lim_{n → ∞} f(a_n) = f(L)\).
+\end{proof}
+
 \subsection{Differentiation}
 
 \begin{definition}[Derivative]
